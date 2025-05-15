@@ -3,97 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新疆美食</title>
+  <title>新疆美食 - 传统与现代的完美融合</title>
   <style>
-    body, html {
+    /* 重置样式 */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      font-family: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      color: #333;
+      background-color: #fff;
+      overflow-x: hidden;
       width: 100%;
       height: 100%;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-      color: #fff;
-      overflow: auto;
     }
-    .container {
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      background: rgba(0,0,0,0.5);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-      padding: 32px 24px 24px 24px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 18px;
-      letter-spacing: 2px;
-    }
-    .food-grid {
+    
+    /* 导航栏 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10%;
+      z-index: 1000;
     }
-    .food-item {
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #8B4513;
+      letter-spacing: 1px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #8B4513;
+    }
+    
+    /* 英雄区域 */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/nang1.png');
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      background: rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 18px 24px;
-      width: 200px;
-      text-decoration: none;
-      color: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-      transition: background 0.2s, transform 0.2s;
+      text-align: center;
+      padding-top: 70px;
     }
-    .food-item:hover {
-      background: #43cea2;
-      color: #fff;
-      transform: translateY(-6px) scale(1.04);
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #8B4513;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 14px 32px;
+      background-color: #8B4513;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+    }
+    
+    .cta-button:hover {
+      background-color: #A0522D;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(139, 69, 19, 0.3);
+    }
+    
+    /* 特色美食区域 */
+    .featured {
+      padding: 100px 10%;
+      background-color: #FFFAF0;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #8B4513;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #8B4513;
+    }
+    
+    .food-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 95%;
+      margin: 0 auto;
+    }
+    
+    .food-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      min-height: 260px; /* 调高盒子高度 */
+      height: 320px;     /* 可根据需要调整 */
+    }
+    .food-img-container {
+      width: 40%;
+      height: 100%;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .food-img {
       width: 100%;
-      max-width: 160px;
-      border-radius: 12px;
-      margin-bottom: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-      background: #fff;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .food-card:hover .food-img {
+      transform: scale(1.05);
+    }
+    .food-info {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+    }
+    /* 手抓饭盒子图片和文字互换 */
+    .food-card.rice-card {
+      flex-direction: row-reverse;
     }
     .food-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 6px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #8B4513;
+      margin-bottom: 10px;
     }
+    
     .food-desc {
-      font-size: 0.98em;
-      color: #e0f7fa;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* 页脚 */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 10%;
+      text-align: center;
+    }
+    
+    .footer p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    
+    /* 点击特效 */
+    .click-effect {
+      position: fixed; /* 改为fixed确保在视口中可见 */
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: rgba(128, 80, 24, 0.5); /* 增加透明度 */
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.8s ease;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>新疆美食</h1>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="logo">新疆美食</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="nang.html">馕</a>
+      <a href="rice.html">手抓饭</a>
+      <a href="yogurt.html">酸奶疙瘩</a>
+    </div>
+  </nav>
+  
+  <!-- 英雄区域 -->
+  <section class="hero">
+    <h1>探索新疆美食文化</h1>
+    <p>新疆美食融合了多民族的烹饪技艺和饮食习惯，以其独特的风味和丰富的文化内涵，成为中国饮食文化中的一颗璀璨明珠。</p>
+    <a href="#featured" class="cta-button">了解更多</a>
+  </section>
+  
+  <!-- 特色美食区域 -->
+  <section id="featured" class="featured">
+    <h2 class="section-title">特色美食</h2>
     <div class="food-grid">
-      <a href="nang.html" class="food-item">
-        <img src="images/nang2.png" alt="馕" class="food-img" />
-        <div class="food-name">馕</div>
-        <div class="food-desc">新疆特色面食</div>
+      <a href="nang.html" class="food-card">
+        <div class="food-img-container">
+          <img src="images/nang2.png" alt="馕" class="food-img">
+        </div>
+        <div class="food-info">
+          <div class="food-name">馕</div>
+          <div class="food-desc">新疆特色面食，外酥里软，香气扑鼻，是新疆人餐桌上不可或缺的主食。</div>
+        </div>
       </a>
-      <a href="rice.html" class="food-item">
-        <img src="images/rice1.png" alt="手抓饭" class="food-img" />
-        <div class="food-name">手抓饭</div>
-        <div class="food-desc">米饭与羊肉的完美结合</div>
+      
+      <a href="rice.html" class="food-card rice-card">
+        <div class="food-img-container">
+          <img src="images/rice1.png" alt="手抓饭" class="food-img">
+        </div>
+        <div class="food-info">
+          <div class="food-name">手抓饭</div>
+          <div class="food-desc">米饭与羊肉的完美结合，色香味俱全，配以胡萝卜、葡萄干等丰富配料，深受各族人民喜爱。</div>
+        </div>
       </a>
-      <a href="yogurt.html" class="food-item">
-        <img src="images/yogurt1.png" alt="酸奶疙瘩" class="food-img" />
-        <div class="food-name">酸奶疙瘩</div>
-        <div class="food-desc">浓郁奶香，健康美味</div>
+      
+      <a href="yogurt.html" class="food-card">
+        <div class="food-img-container">
+          <img src="images/yogurt1.png" alt="酸奶疙瘩" class="food-img">
+        </div>
+        <div class="food-info">
+          <div class="food-name">酸奶疙瘩</div>
+          <div class="food-desc">浓郁奶香，健康美味，口感细腻，酸甜适中，是夏日消暑的佳品。</div>
+        </div>
       </a>
     </div>
-  </div>
+  </section>
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>© 2025 新疆美食文化 - 传统与现代的完美融合</p>
+    <p>未来设计师大赛作品</p>
+  </footer>
+  
   <script src="scripts/index.js"></script>
 </body>
 </html>
