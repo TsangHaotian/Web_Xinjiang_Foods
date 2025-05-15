@@ -18,3 +18,11 @@ document.addEventListener('click', function(e) {
     }
   }, 800);
 });
+
+// 修改返回首页链接
+document.addEventListener('DOMContentLoaded', function() {
+  const backLink = document.querySelector('.back-link');
+  if (backLink && backLink.getAttribute('href').endsWith('.jsp')) {
+    backLink.setAttribute('href', backLink.getAttribute('href').replace('.jsp', '.html'));
+  }
+});

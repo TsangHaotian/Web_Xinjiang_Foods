@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新疆美食</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      overflow: auto;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      background: rgba(0,0,0,0.5);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      padding: 32px 24px 24px 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
+    }
+    .food-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .food-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 18px 24px;
+      width: 200px;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .food-item:hover {
+      background: #43cea2;
+      color: #fff;
+      transform: translateY(-6px) scale(1.04);
+    }
+    .food-img {
+      width: 100%;
+      max-width: 160px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      background: #fff;
+    }
+    .food-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .food-desc {
+      font-size: 0.98em;
+      color: #e0f7fa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>新疆美食</h1>
+    <div class="food-grid">
+      <a href="nang.html" class="food-item">
+        <img src="images/nang2.png" alt="馕" class="food-img" />
+        <div class="food-name">馕</div>
+        <div class="food-desc">新疆特色面食</div>
+      </a>
+      <a href="rice.html" class="food-item">
+        <img src="images/rice1.png" alt="手抓饭" class="food-img" />
+        <div class="food-name">手抓饭</div>
+        <div class="food-desc">米饭与羊肉的完美结合</div>
+      </a>
+      <a href="yogurt.html" class="food-item">
+        <img src="images/yogurt1.png" alt="酸奶疙瘩" class="food-img" />
+        <div class="food-name">酸奶疙瘩</div>
+        <div class="food-desc">浓郁奶香，健康美味</div>
+      </a>
+    </div>
+  </div>
+  <script src="scripts/index.js"></script>
+</body>
+</html>
