@@ -21,6 +21,43 @@
       flex-direction: column;
       overflow: auto;
     }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: flex-start; /* 改为flex-start，使元素靠左对齐 */
+      align-items: center;
+      padding: 0 5%; /* 减少左右内边距 */
+      z-index: 1000;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #8B4513;
+      letter-spacing: 1px;
+      margin-right: 70%; /* 添加右边距，控制与链接的距离 */
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px; /* 减少链接之间的间距 */
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #8B4513;
+    }
     .full-box {
       width: 100vw;
       height: 100vh;
@@ -51,7 +88,7 @@
       z-index: 2;
       background: transparent;
       margin: 0;
-      padding: 0;
+      padding: 3%;
       user-select: none;
     }
     .box1-img {
@@ -74,12 +111,13 @@
       align-items: center;
       display: flex;
       flex-direction: column;
+      padding-bottom: 60px; /* 增加底部内边距 */
     }
     .box2-title {
       position: absolute;
       top: 32px;
       left: 40px;
-      font-size: 2.2em;
+      font-size: 0.88em;
       color: #8B4513;
       font-weight: 700;
       letter-spacing: 2px;
@@ -89,7 +127,25 @@
       padding: 0;
       user-select: none;
     }
-    .box3 { background: #DEB887; color: #8B4513; }
+    .box3-title {
+      position: absolute;
+      top: 32px;
+      right: 40px;
+      font-size: 0.88em;
+      color: #8B4513;
+      font-weight: 700;
+      letter-spacing: 2px;
+      z-index: 2;
+      background: transparent;
+      margin: 0 0 80px 0;
+      padding: 0;
+      user-select: none;
+    }
+    .box3 {
+      background: #fff;
+      color: #8B4513;
+      height: 120vh; /* 增加box3的高度，使其能容纳所有步骤 */
+    }
     .nang-types-row {
       display: flex;
       justify-content: center;
@@ -181,15 +237,16 @@
   .eating-methods-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 100px;
     width: 100%;
-    margin-top: 120px; /* 增加顶部边距，确保在标题下方有足够空间 */
+    margin-top: 150px; /* 增加顶部边距，确保在标题下方有足够空间 */
+    margin-bottom: 80px; /* 增加底部边距，空出更多空间 */
     position: relative;
     z-index: 1;
   }
   
   .eating-method-box {
-    width: 180px;
+    width: 150px;
     height: 220px; /* 增加高度 */
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
@@ -219,9 +276,109 @@
     border: 2px solid #f3e8df;
     box-shadow: 0 2px 12px rgba(139, 69, 19, 0.08);
   }
+  
+  /* 为盒子三添加的制作步骤样式 */
+  .making-steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 1200px;
+    margin-top: 120px; /* 增加与标题的距离 */
+    margin-bottom: 60px;
+  }
+  
+  .step-row {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 30px;  /* 从40px减少到30px，减少步骤之间的间距 */
+    align-items: center;
+  }
+  
+  .step-box {
+    width: 90%;  /* 从600px改为90%，使其更加响应式 */
+    height: 150px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row-reverse; /* 修改为row-reverse，使图片在右侧，文字在左侧 */
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(139, 69, 19, 0.1);
+    color: #8B4513;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f3e8df;
+    padding: 15px;
+    position: relative;
+    margin: 0 auto;  /* 添加自动边距使其居中 */
+  }
+  
+  .step-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(139, 69, 19, 0.15);
+  }
+  
+  .step-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background: #8B4513;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+  }
+  
+  .step-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 30px; /* 将margin-right改为margin-left */
+    margin-right: 0; /* 移除右侧边距 */
+    border: 2px solid #f3e8df;
+    box-shadow: 0 2px 12px rgba(139, 69, 19, 0.08);
+  }
+  
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+  
+  .step-title {
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .step-desc {
+    font-size: 0.5em;
+    text-align: center;
+    line-height: 1.5;
+    color: #666;
+  }
   </style>
 </head>
 <body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="logo">新疆美食</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="nang.html">馕</a>
+      <a href="rice.html">手抓饭</a>
+      <a href="yogurt.html">酸奶疙瘩</a>
+    </div>
+  </nav>
   <div class="full-box box1">
     <span class="box1-title">馕</span>
     <div class="box1-img-wrapper">
@@ -237,7 +394,7 @@
     </div>
   </div>
   <div class="full-box box2">
-    <span class="box2-title">囊的n种吃法</span>
+    <span class="box2-title">食用方式</span>
     <div class="eating-methods-container">
       <div class="eating-method-box">
         <img src="images/nang1.png" alt="蘸酸奶" class="box-img">
@@ -257,7 +414,47 @@
       </div>
     </div>
   </div>
-  <div class="full-box box3">盒子三</div>
+  <div class="full-box box3">
+    <span class="box3-title">囊的做法</span>
+    <div class="making-steps-container">
+      <div class="step-row">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <img src="images/nang1.png" alt="和面" class="step-img">
+          <div class="step-title">和面</div>
+          <div class="step-desc">将面粉、酵母、盐和水混合，揉成光滑的面团，静置发酵1-2小时至体积膨胀一倍。</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">擀面</div>
+            <div class="step-desc">将发酵好的面团分成小剂子，擀成圆形面饼，厚度约1厘米，用叉子或专用工具在表面扎孔。</div>
+          </div>
+          <img src="images/nang2.png" alt="擀面" class="step-img">
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <img src="images/nang1.png" alt="添加配料" class="step-img">
+          <div class="step-title">添加配料</div>
+          <div class="step-desc">根据不同种类的馕，可以撒上芝麻、洋葱、辣椒等配料，轻轻按压使其附着在面饼上。</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-title">烘烤</div>
+            <div class="step-desc">将面饼贴在特制的馕坑内壁上，用明火烘烤10-15分钟，直至表面金黄酥脆，内部熟透。</div>
+          </div>
+          <img src="images/nang2.png" alt="烘烤" class="step-img">
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="scripts/nang.js"></script>
 </body>
 </html>
