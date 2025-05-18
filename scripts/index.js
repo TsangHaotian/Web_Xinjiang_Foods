@@ -146,3 +146,21 @@ document.addEventListener('mousemove', function (e) {
     document.body.removeChild(trail);
   }, 550); // 动画时间 + 延迟时间
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const foodImages = document.querySelectorAll('.halo-effect');
+    
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        
+        foodImages.forEach(img => {
+            const imgPosition = img.getBoundingClientRect().top;
+            
+            if (imgPosition < window.innerHeight * 0.8) {
+                img.classList.add('active');
+            } else {
+                img.classList.remove('active');
+            }
+        });
+    });
+});

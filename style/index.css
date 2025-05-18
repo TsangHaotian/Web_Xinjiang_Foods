@@ -1,4 +1,4 @@
-    * {
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -41,13 +41,17 @@
       gap: 40px;
     }
     
+    /* 在文件顶部添加引用 */
+    @import url('huxideng.css');
+    
     .nav-links a {
       text-decoration: none;
       color: #666;
       font-size: 16px;
       font-weight: 500;
-      transition: color 0.3s, box-shadow 0.3s; /* 添加box-shadow过渡 */
-      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
+      transition: color 0.3s, box-shadow 0.3s;
+      /* 修改为使用类名 */
+      composes: breathing-light;
     }
     
     .nav-links a:hover {
@@ -176,7 +180,8 @@
       font-weight: 500;
       transition: all 0.3s;
       box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
+      /* 修改为使用类名 */
+      composes: breathing-light;
     }
     
     .cta-button:hover {
@@ -230,9 +235,10 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      min-height: 260px; /* 调高盒子高度 */
-      height: 320px;     /* 可根据需要调整 */
-      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
+      min-height: 260px;
+      height: 320px;
+      /* 修改为使用类名 */
+      composes: breathing-light;
     }
     .food-img-container {
       width: 40%;
