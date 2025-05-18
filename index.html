@@ -54,7 +54,8 @@
       color: #666;
       font-size: 16px;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s, box-shadow 0.3s; /* 添加box-shadow过渡 */
+      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
     }
     
     .nav-links a:hover {
@@ -73,8 +74,90 @@
       align-items: center;
       text-align: center;
       padding-top: 70px;
+      position: relative;
+      overflow: hidden;
+      transition: background-position 0.3s ease;
     }
     
+    /* 背景视差效果 */
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/nang1.png');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      transform: translateY(0);
+      transition: transform 0.5s ease-out;
+    }
+    
+    /* 滚动指示器 */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 50px;
+      border: 2px solid #8B4513;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      opacity: 0.7;
+      animation: fadeInOut 2s infinite;
+    }
+    
+    .scroll-indicator::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #8B4513;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      animation: scrollDown 2s infinite;
+    }
+    
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+    }
+    
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+    
+    /* 呼吸灯动画 */
+    @keyframes breathing-light {
+      0% {
+        box-shadow: 0 0 5px rgba(139, 69, 19, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(139, 69, 19, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(139, 69, 19, 0.4);
+      }
+    }
+
     .hero h1 {
       font-size: 48px;
       font-weight: 700;
@@ -101,6 +184,7 @@
       font-weight: 500;
       transition: all 0.3s;
       box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
     }
     
     .cta-button:hover {
@@ -156,6 +240,7 @@
       flex-direction: row;
       min-height: 260px; /* 调高盒子高度 */
       height: 320px;     /* 可根据需要调整 */
+      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
     }
     .food-img-container {
       width: 40%;
@@ -225,6 +310,18 @@
       z-index: 9998;
       transition: all 0.8s ease;
     }
+    
+    /* 鼠标拖尾样式 */
+    .mouse-trail {
+      position: fixed;
+      width: 6px; /* 拖尾点的大小 */
+      height: 6px;
+      border-radius: 50%;
+      pointer-events: none; /* 确保拖尾不影响鼠标事件 */
+      z-index: 9999; /* 确保拖尾在最上层 */
+      opacity: 0.8;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* 添加过渡效果 */
+    }
   </style>
 </head>
 <body>
@@ -241,9 +338,11 @@
   
   <!-- 英雄区域 -->
   <section class="hero">
+    <div class="parallax-bg"></div>
     <h1>探索新疆美食文化</h1>
     <p>新疆美食融合了多民族的烹饪技艺和饮食习惯，以其独特的风味和丰富的文化内涵，成为中国饮食文化中的一颗璀璨明珠。</p>
     <a href="#featured" class="cta-button">了解更多</a>
+    <div class="scroll-indicator"></div>
   </section>
   
   <!-- 特色美食区域 -->
@@ -289,5 +388,122 @@
   </footer>
   
   <script src="scripts/index.js"></script>
+  
+  <script>
+    // 滚动背景动画效果
+    window.addEventListener('load', function() {
+      const parallaxBg = document.querySelector('.parallax-bg');
+      const hero = document.querySelector('.hero');
+      const featuredSection = document.querySelector('.featured');
+      const foodCards = document.querySelectorAll('.food-card');
+  
+      // 添加淡入效果类
+      foodCards.forEach(card => {
+        card.classList.add('fade-in');
+      });
+  
+      // 滚动事件监听
+      window.addEventListener('scroll', function() {
+        // 视差背景效果
+        let scrollPosition = window.scrollY;
+        if (parallaxBg) {
+          parallaxBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        }
+  
+        // 当滚动到特色美食区域时改变背景颜色
+        if (featuredSection) {
+          const featuredTop = featuredSection.getBoundingClientRect().top;
+          if (featuredTop < window.innerHeight / 2) {
+            document.body.classList.add('bg-transition');
+          }
+        }
+  
+        // 元素淡入效果
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementBottom = element.getBoundingClientRect().bottom;
+  
+          // 当元素进入视口时添加可见类
+          if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+            element.classList.add('visible');
+          }
+        });
+      });
+  
+      // 初始触发一次滚动事件，确保页面加载时就应用效果
+      window.dispatchEvent(new Event('scroll'));
+    });
+  
+    // 点击特效
+    document.addEventListener('click', function(e) {
+      // 创建点击特效元素
+      const clickEffect = document.createElement('div');
+      clickEffect.classList.add('click-effect');
+      document.body.appendChild(clickEffect);
+  
+      // 设置特效位置
+      clickEffect.style.left = e.pageX + 'px';
+      clickEffect.style.top = e.pageY + 'px';
+  
+      // 触发特效动画
+      setTimeout(function() {
+        clickEffect.style.width = '300px';
+        clickEffect.style.height = '300px';
+        clickEffect.style.opacity = '0';
+      }, 10);
+  
+      // 移除特效元素
+      setTimeout(function() {
+        document.body.removeChild(clickEffect);
+      }, 800);
+    });
+  
+    // 平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // 阻止默认的跳转行为
+  
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+  
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth' // 启用平滑滚动
+          });
+        }
+      });
+    });
+  
+    // 鼠标拖尾效果
+    let colorIndex = 0;
+    const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3']; // 彩虹颜色数组
+
+    document.addEventListener('mousemove', function(e) {
+      // 创建拖尾元素
+      const trail = document.createElement('div');
+      trail.classList.add('mouse-trail');
+      document.body.appendChild(trail);
+  
+      // 设置拖尾元素位置
+      trail.style.left = e.pageX + 'px';
+      trail.style.top = e.pageY + 'px';
+  
+      // 设置拖尾颜色并更新颜色索引
+      trail.style.backgroundColor = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length; // 循环使用颜色
+  
+      // 动画效果：逐渐缩小并淡出
+      setTimeout(function() {
+        trail.style.transform = 'scale(0)';
+        trail.style.opacity = '0';
+      }, 50); // 稍微延迟开始动画，形成拖尾效果
+  
+      // 移除拖尾元素
+      setTimeout(function() {
+        document.body.removeChild(trail);
+      }, 550); // 动画时间 + 延迟时间
+    });
+  </script>
 </body>
 </html>

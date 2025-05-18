@@ -110,6 +110,8 @@
       box-shadow: 0 2px 8px rgba(139,69,19,0.08);
       letter-spacing: 1px;
       white-space: nowrap;
+      transition: box-shadow 0.3s; /* 添加box-shadow过渡 */
+      animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
     }
     .box1-img-wrapper {
     position: relative;
@@ -154,6 +156,8 @@
     box-shadow: 0 2px 8px rgba(139,69,19,0.08);
     letter-spacing: 1px;
     white-space: nowrap;
+    transition: box-shadow 0.3s; /* 添加box-shadow过渡 */
+    animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
   }
   
   /* 为四种馕类型添加单独样式 - 使用position和transform代替margin */
@@ -203,6 +207,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid #f3e8df;
     padding: 15px;
+    animation: breathing-light 2s infinite ease-in-out; /* 应用呼吸灯动画 */
   }
   
   .eating-method-box:hover {
