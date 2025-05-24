@@ -1,0 +1,389 @@
+/* 基础样式重置 */
+@charset "utf-8";
+
+body, h1, h2, h3, dl, dd, dt, p, ul, li, ol {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    border: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    background: none;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    font: 14px/1.5 "Microsoft YaHei";
+}
+
+li {
+    list-style-type: none;
+}
+
+.fix:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+/* 顶部导航 */
+.top_bg {
+    background: url(../images/gradient_t.png) repeat-x;
+    padding: 20px 3% 10px;
+    position: fixed;
+    width: 94%;
+    z-index: 100;
+}
+
+.top_bg .logo {
+    float: left;
+    max-width: 30%;
+}
+
+.top_bg .logo img {
+    display: block;
+    width: 100%;
+}
+
+.top_bg .top_nav {
+    float: right;
+    max-width: 70%;
+    white-space: nowrap;
+}
+
+.top_bg .top_nav h2 {
+    font-size: 16px;
+    color: #dc2017;
+    margin: 5px 0;
+    text-align: right;
+}
+
+.top_bg .top_nav h2 img {
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.top_bg .top_nav ul {
+    text-align: right;
+}
+
+.top_bg .top_nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.top_bg .top_nav ul li > a {
+    color: #fff;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.top_bg .top_nav ul li i {
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/xsj.png) no-repeat center top;
+}
+
+.top_bg .top_nav ul li dl {
+    position: absolute;
+    top: 42px;
+    right: 0;
+    border-radius: 5px;
+    text-align: left;
+    min-width: 140px;
+    overflow: hidden;
+    background: url(../images/nav_sj.png) no-repeat right 16px top;
+    padding-top: 8px;
+    display: none;
+    transition: display .2s;
+}
+
+.top_bg .top_nav ul li dl dd {
+    padding: 0 12px;
+    font-size: 14px;
+    line-height: 42px;
+    border-top: #eb5148 solid 1px;
+    background-color: #dc2017;
+}
+
+.top_bg .top_nav ul li dl dd a {
+    color: #fff;
+    display: block;
+}
+
+.top_bg .top_nav ul li dl dd:first-child {
+    border: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.top_bg .top_nav ul li dl dd:hover {
+    background-color: #fff;
+}
+
+.top_bg .top_nav ul li dl dd:hover a {
+    color: #dc2017;
+}
+
+.top_bg .top_nav ul li.cur > a {
+    color: #dc2017;
+    font-weight: bold;
+}
+
+.top_bg .top_nav ul li:hover > a {
+    color: #dc2017;
+    font-weight: bold;
+}
+
+.top_bg .top_nav ul li:hover i {
+    background-position-y: -4px;
+}
+
+@media screen and (max-width: 1440px) {
+    .top_bg {
+        padding: 20px 1% 10px;
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .top_main {
+        width: 1300px;
+    }
+}
+
+.wid_main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.banner .hd {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 3%;
+    width: 100%;
+    z-index: 1;
+}
+
+.banner .hd ul {
+    overflow: hidden;
+    zoom: 1;
+    text-align: center;
+}
+
+.banner .hd ul li {
+    margin: 0 10px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #dc2017;
+    border: #fff solid 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.banner .hd ul li.on {
+    background: #fff;
+}
+
+.banner .bd {
+    position: relative;
+    z-index: 0;
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+    height: 100%;
+}
+
+.banner .bd ul {
+    height: 100% !important;
+}
+
+.banner .bd li {
+    zoom: 1;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.banner .bd img {
+    width: 100%;
+    display: block;
+}
+
+.contentbox {
+    padding-top: 51.2%;
+}
+
+.content {
+    position: relative;
+    z-index: 5;
+}
+
+.index_box {
+    height: 940px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.index_box01 {
+    background: url(../images/none.jpg) no-repeat center center;
+}
+
+.title {
+    padding: 130px 0 0 0;
+    text-align: center;
+}
+
+.title h1 {
+    padding-bottom: 50px;
+    font-size: 36px;
+    color: #dc2017;
+    background: url(../images/title_bg.png) no-repeat center bottom;
+}
+
+.title p {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.title_w h1 {
+    color: #ddd;
+    background: url(../images/title_bg_w.png) no-repeat center bottom;
+}
+
+/* 来看看我们吧 */
+.index_box02 {
+    background: url(../images/bgpic02.jpg) no-repeat center center;
+}
+
+.foods_box {
+    margin-top: 80px;
+}
+
+.slideGroup {
+    text-align: center;
+}
+
+.slideGroup .parHd {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.slideGroup .parHd ul {
+    text-align: center;
+}
+
+.slideGroup .parHd ul li {
+    display: inline-block;
+    cursor: pointer;
+    width: 116px;
+    height: 32px;
+    line-height: 32px;
+    border: #dc2017 solid 2px;
+    border-radius: 20px;
+    margin: 0 5px;
+    font-size: 14px;
+    color: #dc2017;
+}
+
+.slideGroup .parHd ul li.on {
+    background: #dc2017;
+    color: #fff;
+}
+
+.slideGroup .slideBox {
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+
+.slideGroup .parBd ul {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.slideGroup .parBd ul li {
+    margin: 0 6px;
+    float: left;
+    _display: inline;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.slideGroup .parBd ul li img {
+    width: 390px;
+    height: 260px;
+    display: block;
+    transform: scale(1, 1);
+    transition: transform .3s;
+}
+
+.slideGroup .parBd ul li h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgba(220, 32, 23, .8);
+    height: 50px;
+    line-height: 50px;
+}
+
+/* 查看更多 */
+.index_more {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.index_more a {
+    display: inline-block;
+    width: 320px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #dc2017;
+    border-radius: 40px;
+    transition: all .2s;
+    border: #dc2017 solid 2px;
+}
+
+.index_more a:hover {
+    text-indent: 1em;
+    color: #dc2017;
+    background: none;
+}
