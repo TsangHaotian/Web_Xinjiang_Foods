@@ -3,88 +3,309 @@
 <head>
     <meta charset="utf-8">
     <meta content="新疆的美食" http-equiv="keywords">
-    <meta name="description" content="新疆的美食">
+    <meta name="description" content="新疆馕饼的制作过程">
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
-    <title>来自新疆的美食</title>
+    <title>新疆大馕饼制作</title>
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
     <style>
-        /* 设置图片的样式 */
-        .banner .bd {
-            position: relative;
-            /* 设置相对定位 */
+
+        /* 制作步骤专用样式 */
+        .production-steps {
+            padding: 80px 0;
+            background: url(../images/bg_texture.jpg) repeat;
         }
 
-        /* 设置文字的样式 */
+        .step-container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .step-card {
+            width: 580px;
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .step-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border: 12px;
+        }
+
+        .step-content {
+            padding: 25px;
+            color: #666;
+        }
+        .step-content p{
+            font-size: 22px;
+        }
+
+        .step-number {
+            font-size: 24px;
+            color: #dc2017;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .material-list {
+            padding: 20px 0;
+            background: linear-gradient(135deg, rgba(40,40,40,0.95) 0%, rgba(70,70,70,0.9) 100%);
+            text-align: center;
+            position: relative;
+            max-width: 1200px;
+            margin: -80px auto 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            transform: translateY(-50%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 20;
+        }
+
+        .material-list:hover {
+            transform: translateY(-50%) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            margin-bottom: 0px;
+            position: relative;
+            padding: 0 30px 0 0 ;
+        }
+
+        .title h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            padding-bottom:0px
+        }
+
+        .title h1::after {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #dc2017;
+            border-radius: 2px;
+        }
+
+        .title p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.5px;
+            margin-top: 0px;
+            padding-bottom: 20px;
+        }
+
+        .material-list ul {
+            display: inline-block;
+            text-align: left;
+            columns: 2;
+            column-gap: 80px;
+            padding: 0 50px;
+        }
+
+        .material-list li {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .material-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #dc2017;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .material-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .material-list li:hover::before {
+            transform: scale(1.2);
+        }
+
+
+        .bgimg ul li img{
+            width: 100%;
+        }
         .text-overlay {
             position: absolute;
-            /* 设置绝对定位 */
             top: 50%;
-            /* 垂直居中 */
             left: 50%;
-            /* 水平居中 */
             transform: translate(-50%, -50%);
-            /* 精确居中 */
             font-size: 120px;
-            /* 设置字体大小，可根据需要调整 */
             color: rgb(255, 255, 255);
-            /* 设置字体颜色，可根据需要调整 */
             font-weight: bold;
-            /* 设置字体加粗 */
             text-align: center;
-            /* 文字水平居中 */
             z-index: 10;
-            /* 确保文字在图片上层显示 */
             width: 100%;
-            /* 宽度覆盖整个图片区域 */
             text-align: center;
-            /* 文字水平居中 */
         }
+        .title p{
+            color: #fff;
+        }
+
     </style>
 </head>
 
 <body>
-    <!--顶部导航栏-->
-    <div class="top_bg fix">
-        <div class="top_main">
-            <div class="top_nav">
-                <h2>
-                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
-                </h2>
-                <ul>
-                    <li> <a href="index.html">网站首页</a> </li>
-                    <li> <a href="#">新疆美食三巨头</a> <i></i>
-                        <dl>
-                            <dd><a href="nang.html">新疆大馕饼</a></dd>
-                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
-                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
-                        </dl>
-                    </li>
-                    <li class="cur"> <a href="#">美食的诞生</a> <i></i>
-                        <dl>
-                            <dd><a href="make_nang.html">馕的制作</a></dd>
-                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
-                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
-                        </dl>
-                    </li>
-                    </li>
-                    <li><a href="food_from.html">美食来自哪</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
-                <script type="text/javascript">
-                    $(function () {
-                        $(".top_nav ul li").hover(
-                            function () {
-                                $(this).find("dl").stop().fadeToggle(700)
-                            }
-                        )
-                    })
-                </script>
+<!-- 顶部导航栏 -->
+<div class="top_bg fix">
+    <!-- 导航栏结构与首页一致，当前页面菜单项应保持cur类 -->
+    <div class="top_main">
+        <div class="top_nav">
+            <h2>
+                <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+            </h2>
+            <ul>
+                <li> <a href="index.html">网站首页</a> </li>
+                <li> <a href="#">新疆美食三巨头</a> <i></i>
+                    <dl>
+                        <dd><a href="nang.html">新疆大馕饼</a></dd>
+                        <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+                        <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+                    </dl>
+                </li>
+                <li class="cur"> <a href="#">美食的诞生</a> <i></i>
+                    <dl>
+                        <dd><a href="make_nang.html">馕的制作</a></dd>
+                        <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+                        <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+                    </dl>
+                </li>
+                <li><a href="food_from.html">美食来自哪</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <script type="text/javascript">
+                $(function () {
+                    $(".top_nav ul li").hover(
+                        function () {
+                            $(this).find("dl").stop().fadeToggle(700)
+                        }
+                    )
+                })
+            </script>
+        </div>
+    </div>
+</div>
+
+<!-- 制作流程大图 -->
+<div class="banner" style="z-index:-1;">
+    <div class="bgimg">
+        <div class="text-overlay">美食的诞生：馕的制作</div> <!-- 添加一个覆盖所有图片的文本 -->
+        <ul>
+            <li><img src="images/nang.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+<div style="height: 1500px"></div>
+<!-- 材料准备 -->
+<div class="material-list">
+    <div class="wid_main">
+        <div class="title">
+            <h1>原料准备</h1>
+            <p>传统配方 简单纯粹</p>
+        </div>
+        <ul>
+            <li>面粉 500克（高筋面粉最佳）</li>
+            <li>清水 280毫升</li>
+            <li>酵母 5克</li>
+            <li>食盐 8克</li>
+            <li>白芝麻 适量</li>
+            <li>植物油 15毫升</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 制作步骤 -->
+<div class="production-steps">
+    <div class="step-container">
+        <!-- 步骤1 -->
+        <div class="step-card">
+            <img src="images/makenang1.jpg" class="step-img" alt="和面">
+            <div class="step-content">
+                <div class="step-number">第一步 和面醒发</div>
+                <h3></h3>
+                <p>将面粉、酵母、盐混合均匀</p>
+                <p>加入洋葱水和植物油</p>
+                <p>分次加入清水揉至光滑面团</p>
+                <p>覆盖保鲜膜在30℃环境下发酵2小时</p>
+            </div>
+        </div>
+
+        <!-- 步骤2 -->
+        <div class="step-card">
+            <img src="images/makenang2.jpg" class="step-img" alt="成型">
+            <div class="step-content">
+                <div class="step-number">第二步 面团成型</div>
+                <h3></h3>
+                <p>将发酵好的面团分成200克/个的小剂子</p>
+                <p>擀成中间薄边缘厚的圆饼</p>
+                <p>用馕针戳出花纹</p>
+                <p>表面刷盐水撒芝麻</p>
+
+            </div>
+        </div>
+
+        <!-- 步骤3 -->
+        <div class="step-card">
+            <img src="images/makenang3.jpg" class="step-img" alt="烤制">
+            <div class="step-content">
+                <div class="step-number">第三步 传统烤制</div>
+                <h3></h3>
+                <p>将馕坯贴入预热至250℃的馕坑内壁</p>
+                <p>关闭坑口</p>
+                <p>烘烤10-15分钟至表面金黄</p>
+                <p>用专用钩具取出</p>
+
+            </div>
+        </div>
+
+        <!-- 步骤4 -->
+        <div class="step-card">
+            <img src="images/makenang4.jpg" class="step-img" alt="成品">
+            <div class="step-content">
+                <div class="step-number">第四步 冷却保存</div>
+                <h3></h3>
+                <p>烤好的馕放在木架上自然冷却</p>
+                <p>装入棉布袋保存</p>
+                <p>最佳食用期为出炉后24小时内</p>
+
             </div>
         </div>
     </div>
-    <!--顶部导航栏-->
+</div>
+
+<!-- 返回按钮 -->
+<div class="index_more" style="margin:50px auto">
+    <a href="nang.html">返回上级菜单</a>
+</div>
+
 </body>
 
 </html>
