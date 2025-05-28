@@ -1,0 +1,208 @@
+.zy_conbox { 
+
+	min-height: 300px; 
+
+	margin:36px auto 80px; 
+
+}
+.zy_foodsbox{ 
+
+	margin-top: 10px; 
+
+}.zy_picbox ul{ 
+
+	overflow:hidden; 
+
+	zoom:1; 
+
+}
+
+.zy_picbox ul li{ 
+
+	_display:inline; 
+
+	overflow:hidden; 
+
+	float: left; 
+
+	margin-right:16px; 
+
+	width: 390px; 
+
+	margin-bottom: 16px;
+
+}
+
+.zy_picbox ul li>div{
+
+	width: 390px; 
+
+	height: 260px;
+
+	position: relative; 
+
+	overflow: hidden;
+
+}
+
+.zy_picbox ul li>div img{ 
+
+	display: block; 
+
+	width: 390px; 
+
+	height: 260px; 
+
+}
+
+.zy_picbox ul li>div>div{
+
+	position: absolute; 
+
+	top:260px; 
+
+	left: 0; 
+
+	background-color: rgba(220,32,23,.8); 
+
+	width: 100%; 
+
+	height: 100%; 
+
+	text-align: center; 
+
+	transition: all .3s;
+
+}
+
+.zy_picbox ul li h3 a{ 
+
+	font-size: 18px; 
+
+	color: #666; 
+
+	text-align: center; 
+
+	line-height: 44px; 
+
+	white-space: nowrap; 
+
+	overflow: hidden; 
+
+	display: block;
+
+}
+
+.zy_picbox ul li:hover h3 a{ 
+
+	color: #dc2017; 
+
+}
+
+.zy_picbox ul li>div>div p{ 
+
+	font-size: 16px; 
+
+	color: #fff; 
+
+	margin:90px 10px 22px 10px; 
+
+	height: 24px; 
+
+	overflow: hidden; 
+
+}
+
+.zy_picbox ul li>div>div a{ 
+
+	display: inline-block; 
+
+	width: 160px; 
+
+	height: 38px;
+
+	line-height: 38px; 
+
+	border:#fff solid 1px; 
+
+	color: #fff;
+
+	border-radius: 40px; 
+
+	font-size: 16px; 
+
+	transition: all .3s;
+
+}
+
+.zy_picbox ul li>div>div a:hover{ 
+
+	background-color: #fff;
+
+	color: #dc2017; 
+
+}
+
+.zy_picbox ul li:hover>div>div{
+
+	top: 0;
+
+}
+
+
+
+.zy_picbox01 ul{ 
+
+	width: 1218px; 
+
+}
+
+.zy_picbox01 ul li>div>a{
+
+	display: block;
+
+}
+
+.zy_picbox01 ul li>div>a img{
+
+	transform: scale(1,1); 
+
+	transition: transform .3s;
+
+}
+
+.zy_picbox01 ul li>div>a:hover img{
+
+	transform: scale(1.1,1.1);
+
+}.zy_foodsbox .zy_picbox01 ul li h3{ 
+
+	background-color: #fff; 
+
+	height: 60px; 
+
+	line-height: 60px; 
+
+}
+
+.zy_foodsbox .zy_picbox01 ul li h3 a{ 
+
+	display: block; 
+
+	line-height: 59px;
+
+	border:#ddd solid 1px; 
+
+	border-top:0; 
+
+}
+
+.zy_foodsbox .zy_picbox01 ul li:hover h3 a{
+
+	color: #fff; 
+
+	background-color: #dc2017; 
+
+	border-color: #dc2017;
+
+}

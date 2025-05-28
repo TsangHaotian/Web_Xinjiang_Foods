@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="新疆的美食" http-equiv="keywords">
+    <meta name="description" content="新疆的美食">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+    <title>来自新疆的美食</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <style>
+        /* 设置图片的样式 */
+        .banner .bd {
+            position: relative;
+            /* 设置相对定位 */
+        }
+
+        /* 设置文字的样式 */
+        .text-overlay {
+            position: absolute;
+            /* 设置绝对定位 */
+            top: 50%;
+            /* 垂直居中 */
+            left: 50%;
+            /* 水平居中 */
+            transform: translate(-50%, -50%);
+            /* 精确居中 */
+            font-size: 120px;
+            /* 设置字体大小，可根据需要调整 */
+            color: rgb(255, 255, 255);
+            /* 设置字体颜色，可根据需要调整 */
+            font-weight: bold;
+            /* 设置字体加粗 */
+            text-align: center;
+            /* 文字水平居中 */
+            z-index: 10;
+            /* 确保文字在图片上层显示 */
+            width: 100%;
+            /* 宽度覆盖整个图片区域 */
+            text-align: center;
+            /* 文字水平居中 */
+        }
+    </style>
+</head>
+
+<body>
+    <!--顶部导航栏-->
+    <div class="top_bg fix">
+        <div class="top_main">
+            <div class="top_nav">
+                <h2>
+                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+                </h2>
+                <ul>
+                    <li> <a href="index.html">网站首页</a> </li>
+                    <li> <a href="#">新疆美食三巨头</a> <i></i>
+                        <dl>
+                            <dd><a href="nang.html">新疆大馕饼</a></dd>
+                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+                        </dl>
+                    </li>
+                    <li class="cur"> <a href="#">美食的诞生</a> <i></i>
+                        <dl>
+                            <dd><a href="make_nang.html">馕的制作</a></dd>
+                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+                        </dl>
+                    </li>
+                    </li>
+                    <li><a href="food_from.html">美食来自哪</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".top_nav ul li").hover(
+                            function () {
+                                $(this).find("dl").stop().fadeToggle(700)
+                            }
+                        )
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <!--顶部导航栏-->
+</body>
+
+</html>
