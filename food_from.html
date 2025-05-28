@@ -32,90 +32,53 @@
         }
 
         .container {
-            width: 80%;
+            width: 60%;
             margin: 0 auto;
             padding: 20px;
         }
 
         .contact-form {
-            background-color: rgba(255, 255, 255, 0.8);
-            /* 半透明背景 */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 150px;
         }
 
-        .contact-form h2 {
-            text-align: center;
-            color: #333;
-            font-size: 60px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-weight: 900;
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
         }
 
-        .contact-form .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #666;
+        .content h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 8px;
+            margin: 30px 0 20px;
         }
 
-        .contact-form .form-group input[type="text"],
-        .contact-form .form-group input[type="email"],
-        .contact-form .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #444;
         }
 
-        .contact-form .form-group textarea {
-            resize: vertical;
-            height: 150px;
+        .food-image {
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin: 25px 0;
+            transition: transform 0.3s ease;
         }
 
-        .contact-form .form-group input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .contact-form .form-group input[type="submit"]:hover {
-            background-color: #555;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-            text-align: center;
-            color: #333;
-        }
-
-        .contact-info p {
-            margin: 10px 0;
-        }
-
-        .contact-info a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .thank-you {
-            text-align: center;
-            margin-top: 20px;
-            color: #333;
-            display: none;
+        .food-image:hover {
+            transform: scale(1.03);
         }
     </style>
 </head>
@@ -147,7 +110,6 @@
                             <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
                         </dl>
                     </li>
-                    </li>
                     <li class="cur"><a href="food_from.html">美食来自哪</a></li>
                     <li><a href="contact.html">联系我们</a></li>
                 </ul>
@@ -171,49 +133,26 @@
             <!-- 美食来历介绍 -->
             <div class="content">
                 <h2>新疆美食的起源与传承</h2>
-                <pre>
-
-                </pre>
                 <p>新疆，这片古老而神秘的土地，孕育了丰富多彩的美食文化。从古丝绸之路的繁华贸易到各民族的融合交流，新疆美食在历史的长河中不断演变和发展，形成了如今独具特色的风味。接下来，让我们一起走进新疆美食的起源之旅，探寻那些令人垂涎的美味背后的故事。
                 </p>
-
-                <pre>
-
-                </pre>
                 <h3>馕饼——穿越千年的面食传奇</h3>
                 <p>馕，是新疆最具代表性的面食之一，其历史可以追溯到古代。早在古代丝绸之路时期，馕就成为了商队和旅人的重要食物。由于其制作简单、便于携带和保存，馕在新疆地区广受欢迎。传统的馕制作工艺传承至今，选用优质小麦粉，经过和面、发酵、擀制、烤制等多道工序，烤制出的馕外皮酥脆，内部松软，散发着浓郁的麦香。馕的种类繁多，如芝麻馕、核桃馕、油馕等，每一种都有其独特的风味和制作方法。在新疆，馕不仅是日常饮食的一部分，还承载着丰富的文化内涵，是维吾尔族等民族传统饮食文化的重要组成部分。
                 </p>
-                <img src="images/index_nangbin.png" style="width:300px; height:200px;" alt="馕饼"> <!-- 替换为实际的馕饼图片路径 -->
-                <pre>
-
-                </pre>
+                <img src="images/index_nangbin.png" class="food-image" alt="馕饼">
                 <h3>羊肉串——烤炉上的美味传承</h3>
-                <p>提到新疆美食，羊肉串无疑是人们最熟悉和喜爱的之一。羊肉串的起源与新疆的游牧文化密切相关。在古代，牧民们在放牧过程中，为了方便食用羊肉，便将羊肉切成小块，用木棍串起来，在篝火上烤制。这种独特的烹饪方式不仅保留了羊肉的鲜嫩多汁，还赋予了它独特的烟熏香味。随着时间的推移，羊肉串的制作工艺不断改进和完善，如今的新疆羊肉串，选用肥瘦相间的羊肉，加入孜然、辣椒粉等调料，烤制出的羊肉串外焦里嫩，香气四溢，令人回味无穷。在新疆的街头巷尾，随处可见烤羊肉串的摊位，那独特的烤肉香气吸引着无数食客。
+                <p>提到新疆美食，羊肉串无疑是人们最熟悉和喜爱的之一。羊肉串的起源与新疆的游牧文化密切相关。在古代，牧民们在放牧过程中，为了方便食用羊肉，便将羊肉切成小块，用木棍串起来，在篝火上烤制。这种独特的烹饪方式不仅保留了羊肉的鲜嫩多汁，还赋予了它独特的烟熏香味。随着时间的推移，羊肉串的制作工艺不断改进和完善，如今的新疆羊肉串，选用肥瘦相间的羊肉，加入孜然、辣椒粉等调料，烤制出的羊肉串外焦里嫩，香气四溢，令人回味无穷。在新疆的街头巷尾，随处可见烤羊肉串的摊位，那独特的烤肉香气吸引着无数食客
                 </p>
-                <img src="images/index_yangrouchuan.png" style="width:300px; height:200px;" alt="羊肉串">
-                <!-- 替换为实际的羊肉串图片路径 -->
-                <pre>
-
-                </pre>
+                <img src="images/index_yangrouchuan.png" class="food-image" alt="羊肉串">
                 <h3>手抓饭——凝聚亲情的美味佳肴</h3>
-                <p>手抓饭，是新疆各民族共同喜爱的传统美食，其历史源远流长。手抓饭的制作过程体现了新疆人民对食物的尊重和热爱。选用优质大米，搭配新鲜的羊肉、胡萝卜、洋葱等食材，经过精心炖煮，使米饭吸收了羊肉和蔬菜的精华，口感软糯，香气扑鼻。手抓饭的名称来源于其独特的食用方式，人们用手抓起饭团，蘸上浓郁的肉汁，大口品尝，这种豪爽的吃法也体现了新疆人民的热情好客。在新疆，手抓饭不仅是日常饮食中的美味佳肴，更是逢年过节、招待宾客时不可或缺的传统美食，它凝聚着家人和朋友之间的情感，象征着团圆和幸福。
-                </p>
-                <img src="images/index_shouzhuafan.png" style="width:300px; height:200px;" alt="手抓饭">
-                <!-- 替换为实际的手抓饭图片路径 -->
-                <pre>
-
-                </pre>
+                <p>手抓饭，是新疆各民族共同喜爱的传统美食，其历史源远流长。手抓饭的制作过程体现了新疆人民对食物的尊重和热爱。选用优质大米，搭配新鲜的羊肉、胡萝卜、洋葱等食材，经过精心炖煮，使米饭吸收了羊肉和蔬菜的精华，口感软糯，香气扑鼻。手抓饭的名称来源于其独特的食用方式，人们用手抓起饭团，蘸上浓郁的肉汁，大口品尝，这种豪爽的吃法也体现了新疆人民的热情好客。在新疆，手抓饭不仅是日常饮食中的美味佳肴，更是逢年过节、招待宾客时不可或缺的传统美食，它凝聚着家人和朋友之间的情感，象征着团圆和幸福。</p>
+                <img src="images/shouzhuafan_1.jpg" class="food-image" alt="手抓饭">
                 <h3>切糕——甜蜜的味蕾记忆</h3>
-                <p>切糕，是新疆特色的小吃之一，以其独特的口感和丰富的营养深受人们喜爱。切糕的主要原料是糯米、核桃仁、葡萄干等，经过蒸煮、压实、切块等工序制作而成。糯米的软糯与核桃仁的香脆、葡萄干的甜润相互融合，口感丰富，营养丰富。在新疆，切糕不仅是日常的零食，还常常作为礼物赠送亲友。它的制作工艺传承了新疆人民对美食的精致追求，每一口切糕都蕴含着甜蜜的味道和美好的回忆。
-                </p>
-                <img src="images/qiegao.jpg" style="width:300px; height:200px;" alt="切糕"> <!-- 替换为实际的切糕图片路径 -->
-                <pre>
-
-                </pre>
+                <p>切糕，是新疆特色的小吃之一，以其独特的口感和丰富的营养深受人们喜爱。切糕的主要原料是糯米、核桃仁、葡萄干等，经过蒸煮、压实、切块等工序制作而成。糯米的软糯与核桃仁的香脆、葡萄干的甜润相互融合，口感丰富，营养丰富。在新疆，切糕不仅是日常的零食，还常常作为礼物赠送亲友。它的制作工艺传承了新疆人民对美食的精致追求，每一口切糕都蕴含着甜蜜的味道和美好的回忆。</p>
+                <img src="images/qiegao_1.jpg" class="food-image" alt="切糕">
                 <h3>烤包子——面皮与馅料的完美邂逅</h3>
-                <p>烤包子，是新疆极具特色的面点之一，其历史同样悠久。烤包子的制作工艺独特，选用薄而韧的面皮，包裹着精心调制的羊肉馅，放入馕坑中烤制而成。烤制出的烤包子外皮金黄酥脆，内馅鲜嫩多汁，香气四溢。在新疆，烤包子不仅是早餐的常见选择，也是人们日常喜爱的小吃之一。它将面皮的酥脆与馅料的鲜美完美结合，展现了新疆美食的独特魅力。烤包子的制作工艺传承了新疆人民对食物的精细加工和独特口味的追求，每一口烤包子都让人回味无穷。
-                </p>
-                <img src="images/kaobaozi.jpg" style="width:300px; height:200px;" alt="烤包子"> <!-- 替换为实际的烤包子图片路径 -->
+                <p>烤包子，是新疆极具特色的面点之一，其历史同样悠久。烤包子的制作工艺独特，选用薄而韧的面皮，包裹着精心调制的羊肉馅，放入馕坑中烤制而成。烤制出的烤包子外皮金黄酥脆，内馅鲜嫩多汁，香气四溢。在新疆，烤包子不仅是早餐的常见选择，也是人们日常喜爱的小吃之一。它将面皮的酥脆与馅料的鲜美完美结合，展现了新疆美食的独特魅力。烤包子的制作工艺传承了新疆人民对食物的精细加工和独特口味的追求，每一口烤包子都让人回味无穷。</p>
+                <img src="images/kaobaozi_1.jpg" class="food-image" alt="烤包子">
+
             </div>
             <!-- 美食来历介绍结束 -->
             <pre>
