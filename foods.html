@@ -41,6 +41,8 @@
 			/* 宽度覆盖整个图片区域 */
 			text-align: center;
 			/* 文字水平居中 */
+			animation: breathe 2s ease-in-out infinite;
+			/* 添加呼吸效果动画 */
 		}
 
 		@font-face {
@@ -52,6 +54,51 @@
 			font-family: 'pingfang', sans-serif;
 			font-weight: lighter;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		}
+
+		@font-face {
+			font-family: 'zh';
+			src: url('fonts/zhuhaiti.ttf');
+		}
+
+		.title h1 {
+			font-family: 'zh', sans-serif;
+			font-weight: lighter;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			font-size: 50px;
+		}
+
+		.foodbox {
+
+			width: 100%;
+			/* 宽度占满整个父容器 */
+			margin: 0 auto;
+			/* 水平居中 */
+			padding: 40px;
+			/* 内边距 */
+			background-image: url(images/bgpic02.jpg);
+			/* 背景颜色 */
+			border: 1px solid #ddd;
+			/* 边框 */
+
+
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			/* 阴影效果 */
+			overflow: hidden;
+			/* 隐藏溢出内容 */
+		}
+
+		/* 定义呼吸效果动画 */
+		@keyframes breathe {
+
+			0%,
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+
+			50% {
+				transform: translate(-50%, -50%) scale(1.05);
+			}
 		}
 	</style>
 </head>
@@ -113,7 +160,7 @@
 
 		<div class="content">
 			<!-- 三个菜品轮播部分 -->
-			<div class="index_box index_box02">
+			<div class="foodbox">
 				<div class="title">
 					<h1>我们在这呢</h1>
 					<div class="zy_conbox wid_main">
@@ -158,13 +205,22 @@
 									</li>
 
 								</ul>
+
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
+
+
 			</div>
+
 		</div>
+
 	</div>
+
 </body>
 
 </html>

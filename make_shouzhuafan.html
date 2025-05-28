@@ -157,6 +157,7 @@
             z-index: 10;
             width: 100%;
             text-align: center;
+            animation: breathe 2s ease-in-out infinite;
         }
 
         .title p {
@@ -218,6 +219,17 @@
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             /* 增加过渡时间并使用平滑曲线 */
         }
+        @keyframes breathe {
+
+			0%,
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+
+			50% {
+				transform: translate(-50%, -50%) scale(1.05);
+			}
+		}
     </style>
 </head>
 

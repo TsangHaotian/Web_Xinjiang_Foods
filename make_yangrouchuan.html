@@ -172,6 +172,7 @@
             font-family: 'pingfang', sans-serif;
             font-weight: lighter;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: breathe 2s ease-in-out infinite;
         }
 
         @font-face {
@@ -218,6 +219,17 @@
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             /* 增加过渡时间并使用平滑曲线 */
         }
+        @keyframes breathe {
+
+			0%,
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+
+			50% {
+				transform: translate(-50%, -50%) scale(1.05);
+			}
+		}
     </style>
 </head>
 

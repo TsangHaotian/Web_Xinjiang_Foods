@@ -40,6 +40,8 @@
       /* 宽度覆盖整个图片区域 */
       text-align: center;
       /* 文字水平居中 */
+      animation: breathe 2s ease-in-out infinite;
+      /* 添加呼吸效果动画 */
     }
 
     @font-face {
@@ -50,7 +52,7 @@
     .text-overlay {
       font-family: 'pingfang', sans-serif;
       font-weight: lighter;
-      text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5) ;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     @font-face {
@@ -63,12 +65,25 @@
       font-weight: lighter;
       font-size: 50px;
     }
+
     .title p {
-      font-weight:bolder;
+      font-weight: bolder;
       font-size: 16px;
       color: #565555;
     }
 
+    /* 定义呼吸效果动画 */
+    @keyframes breathe {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
   </style>
 </head>
 
@@ -118,7 +133,8 @@
     <!--导航栏下面的六个大图片-->
     <div class="banner">
       <div class="bd">
-        <div class="text-overlay">快来品尝来自新疆的味道吧</div> <!-- 添加一个覆盖所有图片的文本 -->
+        <div class="text-overlay">快来品尝来自新疆的味道吧<nav>↓</nav>
+        </div> <!-- 添加一个覆盖所有图片的文本 -->
         <ul>
           <li><img src="images/indexbig01.jpg" /></li>
           <li><img src="images/indexbig02.jpg" /></li>
