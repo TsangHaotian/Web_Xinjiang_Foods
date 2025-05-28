@@ -10,7 +10,6 @@
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
     <style>
-
         /* 制作步骤专用样式 */
         .production-steps {
             padding: 80px 0;
@@ -30,7 +29,7 @@
             background: #fff;
             border-radius: 10px;
             margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
@@ -45,7 +44,8 @@
             padding: 25px;
             color: #666;
         }
-        .step-content p{
+
+        .step-content p {
             font-size: 22px;
         }
 
@@ -58,13 +58,13 @@
 
         .material-list {
             padding: 20px 0;
-            background: linear-gradient(135deg, rgba(40,40,40,0.95) 0%, rgba(70,70,70,0.9) 100%);
+            background: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(70, 70, 70, 0.9) 100%);
             text-align: center;
             position: relative;
             max-width: 1200px;
             margin: -80px auto 0;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(8px);
             transform: translateY(-50%);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,13 +73,13 @@
 
         .material-list:hover {
             transform: translateY(-50%) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         .title {
             margin-bottom: 0px;
             position: relative;
-            padding: 0 30px 0 0 ;
+            padding: 0 30px 0 0;
         }
 
         .title h1 {
@@ -90,7 +90,7 @@
             letter-spacing: 1px;
             position: relative;
             display: inline-block;
-            padding-bottom:0px
+            padding-bottom: 0px
         }
 
         .title h1::after {
@@ -106,7 +106,7 @@
 
         .title p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             letter-spacing: 0.5px;
             margin-top: 0px;
             padding-bottom: 20px;
@@ -149,9 +149,10 @@
         }
 
 
-        .bgimg ul li img{
+        .bgimg ul li img {
             width: 100%;
         }
+
         .text-overlay {
             position: absolute;
             top: 50%;
@@ -165,143 +166,154 @@
             width: 100%;
             text-align: center;
         }
-        .title p{
+
+        .title p {
             color: #fff;
         }
 
+        @font-face {
+            font-family: 'pingfang';
+            src: url('fonts/Feiyang.ttf');
+        }
+
+        .text-overlay {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
 <body>
-<!-- 顶部导航栏 -->
-<div class="top_bg fix">
-    <!-- 导航栏结构与首页一致，当前页面菜单项应保持cur类 -->
-    <div class="top_main">
-        <div class="top_nav">
-            <h2>
-                <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
-            </h2>
+    <!-- 顶部导航栏 -->
+    <div class="top_bg fix">
+        <!-- 导航栏结构与首页一致，当前页面菜单项应保持cur类 -->
+        <div class="top_main">
+            <div class="top_nav">
+                <h2>
+                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+                </h2>
+                <ul>
+                    <li> <a href="index.html">网站首页</a> </li>
+                    <li> <a href="#">新疆美食三巨头</a> <i></i>
+                        <dl>
+                            <dd><a href="nang.html">新疆大馕饼</a></dd>
+                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+                        </dl>
+                    </li>
+                    <li class="cur"> <a href="#">美食的诞生</a> <i></i>
+                        <dl>
+                            <dd><a href="make_nang.html">馕的制作</a></dd>
+                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+                        </dl>
+                    </li>
+                    <li><a href="food_from.html">美食来自哪</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".top_nav ul li").hover(
+                            function () {
+                                $(this).find("dl").stop().fadeToggle(700)
+                            }
+                        )
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- 制作流程大图 -->
+    <div class="banner" style="z-index:-1;">
+        <div class="bgimg">
+            <div class="text-overlay">美食的诞生：羊肉串的制作</div> <!-- 添加一个覆盖所有图片的文本 -->
             <ul>
-                <li> <a href="index.html">网站首页</a> </li>
-                <li> <a href="#">新疆美食三巨头</a> <i></i>
-                    <dl>
-                        <dd><a href="nang.html">新疆大馕饼</a></dd>
-                        <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
-                        <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
-                    </dl>
-                </li>
-                <li class="cur"> <a href="#">美食的诞生</a> <i></i>
-                    <dl>
-                        <dd><a href="make_nang.html">馕的制作</a></dd>
-                        <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
-                        <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
-                    </dl>
-                </li>
-                <li><a href="food_from.html">美食来自哪</a></li>
-                <li><a href="contact.html">联系我们</a></li>
+                <li><img src="images/index_yangrouchuan.png" /></li>
             </ul>
-            <script type="text/javascript">
-                $(function () {
-                    $(".top_nav ul li").hover(
-                        function () {
-                            $(this).find("dl").stop().fadeToggle(700)
-                        }
-                    )
-                })
-            </script>
         </div>
     </div>
-</div>
 
-<!-- 制作流程大图 -->
-<div class="banner" style="z-index:-1;">
-    <div class="bgimg">
-        <div class="text-overlay">美食的诞生：羊肉串的制作</div> <!-- 添加一个覆盖所有图片的文本 -->
-        <ul>
-            <li><img src="images/index_yangrouchuan.png" /></li>
-        </ul>
+    <div style="height: 1500px"></div>
+    <!-- 材料准备 -->
+    <div class="material-list">
+        <div class="wid_main">
+            <div class="title">
+                <h1>原料准备</h1>
+                <p>传统配方 简单纯粹</p>
+            </div>
+            <ul>
+                <li>羊肉 500克（肥瘦相间的羊后腿肉）</li>
+                <li>食盐 10克</li>
+                <li>孜然粉 15克</li>
+                <li>辣椒粉 8克</li>
+                <li>胡椒粉 5克</li>
+                <li>植物油 15毫升</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<div style="height: 1500px"></div>
-<!-- 材料准备 -->
-<div class="material-list">
-    <div class="wid_main">
-        <div class="title">
-            <h1>原料准备</h1>
-            <p>传统配方 简单纯粹</p>
-        </div>
-        <ul>
-            <li>羊肉 500克（肥瘦相间的羊后腿肉）</li>
-            <li>食盐 10克</li>
-            <li>孜然粉 15克</li>
-            <li>辣椒粉 8克</li>
-            <li>胡椒粉 5克</li>
-            <li>植物油 15毫升</li>
-        </ul>
-    </div>
-</div>
-
-<!-- 制作步骤 -->
-<div class="production-steps">
-    <div class="step-container">
-        <!-- 步骤1 -->
-        <div class="step-card">
-            <img src="images/make_chuan1.png" class="step-img" alt="切肉">
-            <div class="step-content">
-                <div class="step-number">第一步 肉块处理</div>
-                <h3></h3>
-                <p>将羊肉切成2厘米见方的小块</p>
-                <p>加入食盐和植物油腌制</p>
-                <p>放入孜然粉和辣椒粉调味</p>
-                <p>腌制30分钟入味</p>
+    <!-- 制作步骤 -->
+    <div class="production-steps">
+        <div class="step-container">
+            <!-- 步骤1 -->
+            <div class="step-card">
+                <img src="images/make_chuan1.png" class="step-img" alt="切肉">
+                <div class="step-content">
+                    <div class="step-number">第一步 肉块处理</div>
+                    <h3></h3>
+                    <p>将羊肉切成2厘米见方的小块</p>
+                    <p>加入食盐和植物油腌制</p>
+                    <p>放入孜然粉和辣椒粉调味</p>
+                    <p>腌制30分钟入味</p>
+                </div>
             </div>
-        </div>
 
-        <!-- 步骤2 -->
-        <div class="step-card">
-            <img src="images/make_chuan4.png" class="step-img" alt="串肉">
-            <div class="step-content">
-                <div class="step-number">第二步 串肉准备</div>
-                <h3></h3>
-                <p>准备竹签或铁签</p>
-                <p>每串穿5-6块肉</p>
-                <p>肉块之间留有间隙</p>
-                <p>均匀撒上孜然粉和胡椒粉</p>
+            <!-- 步骤2 -->
+            <div class="step-card">
+                <img src="images/make_chuan4.png" class="step-img" alt="串肉">
+                <div class="step-content">
+                    <div class="step-number">第二步 串肉准备</div>
+                    <h3></h3>
+                    <p>准备竹签或铁签</p>
+                    <p>每串穿5-6块肉</p>
+                    <p>肉块之间留有间隙</p>
+                    <p>均匀撒上孜然粉和胡椒粉</p>
+                </div>
             </div>
-        </div>
 
-        <!-- 步骤3 -->
-        <div class="step-card">
-            <img src="images/make_chuan3.png" class="step-img" alt="烤制">
-            <div class="step-content">
-                <div class="step-number">第三步 传统烤制</div>
-                <h3></h3>
-                <p>准备炭火烤架至炭火通红</p>
-                <p>将肉串放在烤架上</p>
-                <p>不断翻转烤至金黄色</p>
-                <p>刷上少许油增加香味</p>
+            <!-- 步骤3 -->
+            <div class="step-card">
+                <img src="images/make_chuan3.png" class="step-img" alt="烤制">
+                <div class="step-content">
+                    <div class="step-number">第三步 传统烤制</div>
+                    <h3></h3>
+                    <p>准备炭火烤架至炭火通红</p>
+                    <p>将肉串放在烤架上</p>
+                    <p>不断翻转烤至金黄色</p>
+                    <p>刷上少许油增加香味</p>
+                </div>
             </div>
-        </div>
 
-        <!-- 步骤4 -->
-        <div class="step-card">
-            <img src="images/make_chuan2.png" class="step-img" alt="成品">
-            <div class="step-content">
-                <div class="step-number">第四步 出炉装盘</div>
-                <h3></h3>
-                <p>烤好的羊肉串取下</p>
-                <p>撒上辣椒粉和孜然粉</p>
-                <p>趁热食用风味最佳</p>
+            <!-- 步骤4 -->
+            <div class="step-card">
+                <img src="images/make_chuan2.png" class="step-img" alt="成品">
+                <div class="step-content">
+                    <div class="step-number">第四步 出炉装盘</div>
+                    <h3></h3>
+                    <p>烤好的羊肉串取下</p>
+                    <p>撒上辣椒粉和孜然粉</p>
+                    <p>趁热食用风味最佳</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- 返回按钮 -->
-<div class="index_more" style="margin:50px auto">
-    <a href="yangrouchuan.html">返回上级菜单</a>
-</div>
+    <!-- 返回按钮 -->
+    <div class="index_more" style="margin:50px auto">
+        <a href="yangrouchuan.html">返回上级菜单</a>
+    </div>
 
 </body>
 

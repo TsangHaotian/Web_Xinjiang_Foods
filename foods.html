@@ -1,15 +1,16 @@
 ﻿<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta content="更多食物" http-equiv="keywords">
-  <meta name="description" content="更多食物">
-  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
-  <title>更多食物</title>
-  <link rel="stylesheet" href="css/index.css" type="text/css">
-  <link rel="stylesheet" href="css/food.css" type="text/css">
-  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-  <style>
+	<meta charset="utf-8">
+	<meta content="更多食物" http-equiv="keywords">
+	<meta name="description" content="更多食物">
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+	<title>更多食物</title>
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<link rel="stylesheet" href="css/food.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<style>
 		/* 设置图片的样式 */
 		.banner .bd {
 			position: relative;
@@ -42,50 +43,60 @@
 			/* 文字水平居中 */
 		}
 
+		@font-face {
+			font-family: 'pingfang';
+			src: url('fonts/Feiyang.ttf');
+		}
+
+		.text-overlay {
+			font-family: 'pingfang', sans-serif;
+			font-weight: lighter;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		}
 	</style>
 </head>
 
 <body>
-    <!--顶部导航栏-->
-    <div class="top_bg fix">
-        <div class="top_main">
-            <div class="top_nav">
-                <h2>
-                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
-                </h2>
-                <ul>
-                    <li> <a href="index.html">网站首页</a> </li>
-                    <li> <a href="#">新疆美食三巨头</a> <i></i>
-                        <dl>
-                            <dd><a href="nang.html">新疆大馕饼</a></dd>
-                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
-                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
-                        </dl>
-                    </li>
-                    <li> <a href="#">美食的诞生</a> <i></i>
-                        <dl>
-                            <dd><a href="make_nang.html">馕的制作</a></dd>
-                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
-                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
-                        </dl>
-                    </li>
-                    </li>
-                    <li><a href="food_from.html">美食来自哪</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
-                <script type="text/javascript">
-                    $(function () {
-                        $(".top_nav ul li").hover(
-                            function () {
-                                $(this).find("dl").stop().fadeToggle(700)
-                            }
-                        )
-                    })
-                </script>
-            </div>
-        </div>
-    </div>
-    <!--顶部导航栏-->
+	<!--顶部导航栏-->
+	<div class="top_bg fix">
+		<div class="top_main">
+			<div class="top_nav">
+				<h2>
+					<img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+				</h2>
+				<ul>
+					<li> <a href="index.html">网站首页</a> </li>
+					<li> <a href="#">新疆美食三巨头</a> <i></i>
+						<dl>
+							<dd><a href="nang.html">新疆大馕饼</a></dd>
+							<dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+							<dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+						</dl>
+					</li>
+					<li> <a href="#">美食的诞生</a> <i></i>
+						<dl>
+							<dd><a href="make_nang.html">馕的制作</a></dd>
+							<dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+							<dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+						</dl>
+					</li>
+					</li>
+					<li><a href="food_from.html">美食来自哪</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+				</ul>
+				<script type="text/javascript">
+					$(function () {
+						$(".top_nav ul li").hover(
+							function () {
+								$(this).find("dl").stop().fadeToggle(700)
+							}
+						)
+					})
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--顶部导航栏-->
 
 	<div class="contentbox">
 		<!--导航栏下面的六个大图片-->
@@ -145,7 +156,7 @@
 										</div>
 										<h3><a href="hamigua.html">哈密瓜</a></h3>
 									</li>
-								
+
 								</ul>
 							</div>
 						</div>
