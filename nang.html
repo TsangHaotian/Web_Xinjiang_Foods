@@ -27,8 +27,8 @@
         /* 动态背景层 */
         .hero-bg {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url('images/nang_banner2.png') center/cover fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('images/nang_banner2.png') center/cover fixed;
             position: relative;
             overflow: hidden;
         }
@@ -41,13 +41,20 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             animation: titleEntrance 1.5s ease-out;
         }
 
         @keyframes titleEntrance {
-            from { opacity: 0; transform: translate(-50%, -40%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
         }
 
         /* 主要内容容器 */
@@ -57,7 +64,7 @@
             padding: 40px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
@@ -148,163 +155,210 @@
             transform: translateX(-20px);
         }
 
-        .culture-grid{
+        .culture-grid {
             display: flex;
             justify-content: space-around;
 
         }
+
+        @font-face {
+            font-family: 'zhuhai';
+            src: url('fonts/zhuhaiti.ttf');
+        }
+
+        .section h2 {
+            font-family: 'zhuhai', sans-serif;
+            font-weight: lighter;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 40px;
+        }
+
         @font-face {
             font-family: 'pingfang';
             src: url('fonts/PingFang.ttf');
         }
-        .hero-title h1 {
+
+        .section h3,
+        p {
             font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+
+        .section p {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            text-indent: 2em;
+        }
+
+        .caption {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+
+        .culture-item img {
+            width: 100%;
+            /* 设置图片宽度为容器宽度 */
+            height: 300px;
+            /* 设置图片高度 */
+            object-fit: cover;
+            /* 确保图片不会被拉伸 */
+            border-radius: 15px;
+            /* 设置图片圆角 */
+        }
+
+        .gallery-item img {
+            border-radius: 8px;
+            /* 设置图片圆角 */
         }
     </style>
 </head>
 
 <body>
-<!-- 全屏背景 -->
-<div class="background"></div>
+    <!-- 全屏背景 -->
+    <div class="background"></div>
 
-<!-- 顶部导航栏 -->
-<div class="top_bg fix">
-    <div class="top_main">
-        <div class="top_nav">
-            <h2>
-                <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
-            </h2>
-            <ul>
-                <li> <a href="index.html">网站首页</a> </li>
-                <li class="cur"> <a href="#">新疆美食三巨头</a> <i></i>
-                    <dl>
-                        <dd><a href="nang.html">新疆大馕饼</a></dd>
-                        <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
-                        <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
-                    </dl>
-                </li>
-                <li> <a href="#">美食的诞生</a> <i></i>
-                    <dl>
-                        <dd><a href="make_nang.html">馕的制作</a></dd>
-                        <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
-                        <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
-                    </dl>
-                </li>
-                </li>
-                <li><a href="food_from.html">美食来自哪</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-            <script type="text/javascript">
-                $(function () {
-                    $(".top_nav ul li").hover(
-                        function () {
-                            $(this).find("dl").stop().fadeToggle(700)
+    <!-- 顶部导航栏 -->
+    <div class="top_bg fix">
+        <div class="top_main">
+            <div class="top_nav">
+                <h2>
+                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+                </h2>
+                <ul>
+                    <li> <a href="index.html">网站首页</a> </li>
+                    <li class="cur"> <a href="#">新疆美食三巨头</a> <i></i>
+                        <dl>
+                            <dd><a href="nang.html">新疆大馕饼</a></dd>
+                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+                        </dl>
+                    </li>
+                    <li> <a href="#">美食的诞生</a> <i></i>
+                        <dl>
+                            <dd><a href="make_nang.html">馕的制作</a></dd>
+                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+                        </dl>
+                    </li>
+                    </li>
+                    <li><a href="food_from.html">美食来自哪</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".top_nav ul li").hover(
+                            function () {
+                                $(this).find("dl").stop().fadeToggle(700)
+                            }
+                        )
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部导航栏 -->
+
+    <div class="hero-bg">
+        <div class="hero-title">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">西域天馕</h1>
+            <p style="font-size: 1.5rem;">穿越丝路的千年面食记忆</p>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 历史文化 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-history"></i>历史传承</h2>
+            <p>新疆大馕的起源可追溯至汉代，作为丝绸之路上的重要补给，这种圆形面食见证了东西方文明的交融。考古学家在尼雅遗址发现的碳化馕饼，印证了2000年前的制作工艺。</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/nang1.jpg" alt="古代馕坑遗址">
+                    <div class="caption">唐代馕坑复原模型</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nang2.jpg" alt="丝绸之路商队">
+                    <div class="caption">丝路商队携带馕饼场景</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作工艺 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-seedling"></i>传统工艺</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>原料选择</h3>
+                    <p>选用天山北麓冬小麦，蛋白质含量高达14%</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>面团发酵</h3>
+                    <p>天然酵母低温发酵12小时，形成独特风味</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>手工成型</h3>
+                    <p>匠人手工拍打成型，确保气孔均匀分布</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>馕坑烤制</h3>
+                    <p>传统土制馕坑，果木炭300℃高温烘烤</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化内涵 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-hand-holding-heart"></i>文化寓意</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="images/nang_hun.png" alt="婚庆馕饼" width="400" height="300">
+                    <h3>婚庆礼仪</h3>
+                    <p>新人共食同心馕，象征美满婚姻</p>
+                </div>
+                <div class="culture-item">
+                    <img src="images/bignang.png" alt="节日大馕" width="400" height="300">
+                    <h3>节日庆典</h3>
+                    <p>古尔邦节特制直径1.5米巨型馕饼</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
                         }
-                    )
-                })
-            </script>
-        </div>
-    </div>
-</div>
-<!-- 顶部导航栏 -->
-
-<div class="hero-bg">
-    <div class="hero-title">
-        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">西域天馕</h1>
-        <p style="font-size: 1.5rem;">穿越丝路的千年面食记忆</p>
-    </div>
-</div>
-
-<!-- 主要内容 -->
-<main class="main-content">
-    <!-- 历史文化 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-history"></i>历史传承</h2>
-        <p>新疆大馕的起源可追溯至汉代，作为丝绸之路上的重要补给，这种圆形面食见证了东西方文明的交融。考古学家在尼雅遗址发现的碳化馕饼，印证了2000年前的制作工艺。</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/nang1.jpg" alt="古代馕坑遗址">
-                <div class="caption">唐代馕坑复原模型</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/nang2.jpg" alt="丝绸之路商队">
-                <div class="caption">丝路商队携带馕饼场景</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 制作工艺 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-seedling"></i>传统工艺</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>原料选择</h3>
-                <p>选用天山北麓冬小麦，蛋白质含量高达14%</p>
-            </div>
-            <div class="timeline-item">
-                <h3>面团发酵</h3>
-                <p>天然酵母低温发酵12小时，形成独特风味</p>
-            </div>
-            <div class="timeline-item">
-                <h3>手工成型</h3>
-                <p>匠人手工拍打成型，确保气孔均匀分布</p>
-            </div>
-            <div class="timeline-item">
-                <h3>馕坑烤制</h3>
-                <p>传统土制馕坑，果木炭300℃高温烘烤</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 文化内涵 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-hand-holding-heart"></i>文化寓意</h2>
-        <div class="culture-grid">
-            <div class="culture-item">
-                <img src="images/nang3.jpg" alt="婚庆馕饼" width="400" height="300">
-                <h3>婚庆礼仪</h3>
-                <p>新人共食同心馕，象征美满婚姻</p>
-            </div>
-            <div class="culture-item">
-                <img src="images/nang4.jpg" alt="节日大馕" width="400" height="300">
-                <h3>节日庆典</h3>
-                <p>古尔邦节特制直径1.5米巨型馕饼</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<script>
-    // 图片懒加载
-    document.addEventListener("DOMContentLoaded", function() {
-        const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.remove("lazy");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
+                    });
                 });
-            });
 
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        }
-    });
+                lazyImages.forEach(function (lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
 
-    // 导航栏交互
-    $(document).ready(function(){
-        $('.top_nav li').hover(
-            function(){ $(this).addClass('hover'); },
-            function(){ $(this).removeClass('hover'); }
-        );
-    });
-</script>
+        // 导航栏交互
+        $(document).ready(function () {
+            $('.top_nav li').hover(
+                function () { $(this).addClass('hover'); },
+                function () { $(this).removeClass('hover'); }
+            );
+        });
+    </script>
 
 
 </body>

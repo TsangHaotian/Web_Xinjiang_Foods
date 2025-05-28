@@ -24,14 +24,6 @@
             justify-content: space-between;
         }
 
-        .step-card {
-            width: 580px;
-            background: #fff;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
 
         .step-img {
             width: 100%;
@@ -181,6 +173,51 @@
             font-weight: lighter;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
+        @font-face {
+            font-family: 'pingfang1';
+            src: url('fonts/PingFang.ttf');
+        }
+
+        .step-number {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+            font-size: 30px;
+
+        }
+
+        .step-content {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+
+        }
+
+        .main-content_1 {
+            max-width: 1200px;
+            padding: 60px;
+            margin: auto auto 0;
+            background: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(70, 70, 70, 0.9) 100%);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-card:hover {
+            transform: scale(1.02);
+            /* 鼠标悬停时放大1.05倍 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* 可选：放大时增加阴影效果 */
+        }
+
+        .step-card {
+            width: 580px;
+            background: #fff;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            /* 增加过渡时间并使用平滑曲线 */
+        }
     </style>
 </head>
 
@@ -255,63 +292,63 @@
             </ul>
         </div>
     </div>
-
-    <!-- 制作步骤 -->
-    <div class="production-steps">
-        <div class="step-container">
-            <!-- 步骤1 -->
-            <div class="step-card">
-                <img src="images/make_rice1.png" class="step-img" alt="准备食材">
-                <div class="step-content">
-                    <div class="step-number">第一步 食材准备</div>
-                    <h3></h3>
-                    <p>将羊肉切成2厘米见方的小块</p>
-                    <p>胡萝卜切成细丝</p>
-                    <p>洋葱切成丝</p>
-                    <p>大米淘洗干净浸泡30分钟</p>
+    <main class="main-content_1">
+        <!-- 制作步骤 -->
+        <div class="production-steps">
+            <div class="step-container">
+                <!-- 步骤1 -->
+                <div class="step-card">
+                    <img src="images/make_rice1.png" class="step-img" alt="准备食材">
+                    <div class="step-content">
+                        <div class="step-number">第一步 食材准备</div>
+                        <h3></h3>
+                        <p>将羊肉切成2厘米见方的小块</p>
+                        <p>胡萝卜切成细丝</p>
+                        <p>洋葱切成丝</p>
+                        <p>大米淘洗干净浸泡30分钟</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤2 -->
-            <div class="step-card">
-                <img src="images/make_rice2.png" class="step-img" alt="炒肉">
-                <div class="step-content">
-                    <div class="step-number">第二步 炒制食材</div>
-                    <h3></h3>
-                    <p>盘中热油爆香洋葱</p>
-                    <p>加入羊肉块翻炒至变色</p>
-                    <p>放入胡萝卜丝继续翻炒</p>
-                    <p>加入盐和香料调味</p>
+                <!-- 步骤2 -->
+                <div class="step-card">
+                    <img src="images/make_rice2.png" class="step-img" alt="炒肉">
+                    <div class="step-content">
+                        <div class="step-number">第二步 炒制食材</div>
+                        <h3></h3>
+                        <p>盘中热油爆香洋葱</p>
+                        <p>加入羊肉块翻炒至变色</p>
+                        <p>放入胡萝卜丝继续翻炒</p>
+                        <p>加入盐和香料调味</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤3 -->
-            <div class="step-card">
-                <img src="images/make_rice3.png" class="step-img" alt="煮饭">
-                <div class="step-content">
-                    <div class="step-number">第三步 煮饭</div>
-                    <h3></h3>
-                    <p>将炒好的食材铺在米饭上</p>
-                    <p>加入适量的水</p>
-                    <p>大火煮开后转小火焖20分钟</p>
-                    <p>关火后焖5分钟</p>
+                <!-- 步骤3 -->
+                <div class="step-card">
+                    <img src="images/make_rice3.png" class="step-img" alt="煮饭">
+                    <div class="step-content">
+                        <div class="step-number">第三步 煮饭</div>
+                        <h3></h3>
+                        <p>将炒好的食材铺在米饭上</p>
+                        <p>加入适量的水</p>
+                        <p>大火煮开后转小火焖20分钟</p>
+                        <p>关火后焖5分钟</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤4 -->
-            <div class="step-card">
-                <img src="images/make_rice4.png" class="step-img" alt="成品">
-                <div class="step-content">
-                    <div class="step-number">第四步 拌匀上桌</div>
-                    <h3></h3>
-                    <p>将饭和菜用铲子轻轻拌匀</p>
-                    <p>装盘后撒上香菜末点缀</p>
-                    <p>趁热食用风味最佳</p>
+                <!-- 步骤4 -->
+                <div class="step-card">
+                    <img src="images/make_rice4.png" class="step-img" alt="成品">
+                    <div class="step-content">
+                        <div class="step-number">第四步 拌匀上桌</div>
+                        <h3></h3>
+                        <p>将饭和菜用铲子轻轻拌匀</p>
+                        <p>装盘后撒上香菜末点缀</p>
+                        <p>趁热食用风味最佳</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
     <!-- 返回按钮 -->
     <div class="index_more" style="margin:50px auto">
         <a href="shouzhuafan.html">返回上级菜单</a>

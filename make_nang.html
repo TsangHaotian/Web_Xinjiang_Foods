@@ -24,14 +24,7 @@
             justify-content: space-between;
         }
 
-        .step-card {
-            width: 580px;
-            background: #fff;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+
 
         .step-img {
             width: 100%;
@@ -168,7 +161,7 @@
         }
 
         .title p {
-            color: #fff;
+            color: #ffffff;
         }
 
         @font-face {
@@ -180,6 +173,51 @@
             font-family: 'pingfang', sans-serif;
             font-weight: lighter;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @font-face {
+            font-family: 'pingfang1';
+            src: url('fonts/PingFang.ttf');
+        }
+
+        .step-number {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+            font-size: 30px;
+
+        }
+
+        .step-content {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+
+        }
+
+        .main-content_1 {
+            max-width: 1200px;
+            padding: 60px;
+            margin: auto auto 0;
+            background: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(70, 70, 70, 0.9) 100%);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-card:hover {
+            transform: scale(1.02);
+            /* 鼠标悬停时放大1.05倍 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* 可选：放大时增加阴影效果 */
+        }
+
+        .step-card {
+            width: 580px;
+            background: #fff;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            /* 增加过渡时间并使用平滑曲线 */
         }
     </style>
 </head>
@@ -234,9 +272,9 @@
             </ul>
         </div>
     </div>
-
     <div style="height: 1500px"></div>
     <!-- 材料准备 -->
+
     <div class="material-list">
         <div class="wid_main">
             <div class="title">
@@ -253,70 +291,71 @@
             </ul>
         </div>
     </div>
-
-    <!-- 制作步骤 -->
-    <div class="production-steps">
-        <div class="step-container">
-            <!-- 步骤1 -->
-            <div class="step-card">
-                <img src="images/makenang1.jpg" class="step-img" alt="和面">
-                <div class="step-content">
-                    <div class="step-number">第一步 和面醒发</div>
-                    <h3></h3>
-                    <p>将面粉、酵母、盐混合均匀</p>
-                    <p>加入洋葱水和植物油</p>
-                    <p>分次加入清水揉至光滑面团</p>
-                    <p>覆盖保鲜膜在30℃环境下发酵2小时</p>
+    <main class="main-content_1">
+        <!-- 制作步骤 -->
+        <div class="production-steps">
+            <div class="step-container">
+                <!-- 步骤1 -->
+                <div class="step-card">
+                    <img src="images/makenang1.jpg" class="step-img" alt="和面">
+                    <div class="step-content">
+                        <div class="step-number">第一步 和面醒发</div>
+                        <h3></h3>
+                        <p>将面粉、酵母、盐混合均匀</p>
+                        <p>加入洋葱水和植物油</p>
+                        <p>分次加入清水揉至光滑面团</p>
+                        <p>覆盖保鲜膜在30℃环境下发酵2小时</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤2 -->
-            <div class="step-card">
-                <img src="images/makenang2.jpg" class="step-img" alt="成型">
-                <div class="step-content">
-                    <div class="step-number">第二步 面团成型</div>
-                    <h3></h3>
-                    <p>将发酵好的面团分成200克/个的小剂子</p>
-                    <p>擀成中间薄边缘厚的圆饼</p>
-                    <p>用馕针戳出花纹</p>
-                    <p>表面刷盐水撒芝麻</p>
+                <!-- 步骤2 -->
+                <div class="step-card">
+                    <img src="images/makenang2.jpg" class="step-img" alt="成型">
+                    <div class="step-content">
+                        <div class="step-number">第二步 面团成型</div>
+                        <h3></h3>
+                        <p>将发酵好的面团分成200克/个的小剂子</p>
+                        <p>擀成中间薄边缘厚的圆饼</p>
+                        <p>用馕针戳出花纹</p>
+                        <p>表面刷盐水撒芝麻</p>
 
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤3 -->
-            <div class="step-card">
-                <img src="images/makenang3.jpg" class="step-img" alt="烤制">
-                <div class="step-content">
-                    <div class="step-number">第三步 传统烤制</div>
-                    <h3></h3>
-                    <p>将馕坯贴入预热至250℃的馕坑内壁</p>
-                    <p>关闭坑口</p>
-                    <p>烘烤10-15分钟至表面金黄</p>
-                    <p>用专用钩具取出</p>
+                <!-- 步骤3 -->
+                <div class="step-card">
+                    <img src="images/kaozhinang.jpg" class="step-img" alt="烤制">
+                    <div class="step-content">
+                        <div class="step-number">第三步 传统烤制</div>
+                        <h3></h3>
+                        <p>将馕坯贴入预热至250℃的馕坑内壁</p>
+                        <p>关闭坑口</p>
+                        <p>烘烤10-15分钟至表面金黄</p>
+                        <p>用专用钩具取出</p>
 
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤4 -->
-            <div class="step-card">
-                <img src="images/makenang4.jpg" class="step-img" alt="成品">
-                <div class="step-content">
-                    <div class="step-number">第四步 冷却保存</div>
-                    <h3></h3>
-                    <p>烤好的馕放在木架上自然冷却</p>
-                    <p>装入棉布袋保存</p>
-                    <p>最佳食用期为出炉后24小时内</p>
+                <!-- 步骤4 -->
+                <div class="step-card">
+                    <img src="images/lenquenang.jpg" class="step-img" alt="成品">
+                    <div class="step-content">
+                        <div class="step-number">第四步 冷却保存</div>
+                        <h3></h3>
+                        <p>烤好的馕放在木架上自然冷却</p>
+                        <p>装入棉布袋保存</p>
+                        <p>最佳食用期为出炉后24小时内</p>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
     <!-- 返回按钮 -->
     <div class="index_more" style="margin:50px auto">
         <a href="nang.html">返回上级菜单</a>
     </div>
+
 
 </body>
 

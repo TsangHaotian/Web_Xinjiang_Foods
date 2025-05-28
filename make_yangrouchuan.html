@@ -24,14 +24,6 @@
             justify-content: space-between;
         }
 
-        .step-card {
-            width: 580px;
-            background: #fff;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
 
         .step-img {
             width: 100%;
@@ -181,6 +173,51 @@
             font-weight: lighter;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
+        @font-face {
+            font-family: 'pingfang1';
+            src: url('fonts/PingFang.ttf');
+        }
+
+        .step-number {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+            font-size: 30px;
+
+        }
+
+        .step-content {
+            font-family: 'pingfang1', sans-serif;
+            font-weight: lighter;
+
+        }
+
+        .main-content_1 {
+            max-width: 1200px;
+            padding: 60px;
+            margin: auto auto 0;
+            background: linear-gradient(135deg, rgba(40, 40, 40, 0.95) 0%, rgba(70, 70, 70, 0.9) 100%);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-card:hover {
+            transform: scale(1.02);
+            /* 鼠标悬停时放大1.05倍 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* 可选：放大时增加阴影效果 */
+        }
+
+        .step-card {
+            width: 580px;
+            background: #fff;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            /* 增加过渡时间并使用平滑曲线 */
+        }
     </style>
 </head>
 
@@ -253,63 +290,63 @@
             </ul>
         </div>
     </div>
-
-    <!-- 制作步骤 -->
-    <div class="production-steps">
-        <div class="step-container">
-            <!-- 步骤1 -->
-            <div class="step-card">
-                <img src="images/make_chuan1.png" class="step-img" alt="切肉">
-                <div class="step-content">
-                    <div class="step-number">第一步 肉块处理</div>
-                    <h3></h3>
-                    <p>将羊肉切成2厘米见方的小块</p>
-                    <p>加入食盐和植物油腌制</p>
-                    <p>放入孜然粉和辣椒粉调味</p>
-                    <p>腌制30分钟入味</p>
+    <main class="main-content_1">
+        <!-- 制作步骤 -->
+        <div class="production-steps">
+            <div class="step-container">
+                <!-- 步骤1 -->
+                <div class="step-card">
+                    <img src="images/make_chuan1.png" class="step-img" alt="切肉">
+                    <div class="step-content">
+                        <div class="step-number">第一步 肉块处理</div>
+                        <h3></h3>
+                        <p>将羊肉切成2厘米见方的小块</p>
+                        <p>加入食盐和植物油腌制</p>
+                        <p>放入孜然粉和辣椒粉调味</p>
+                        <p>腌制30分钟入味</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤2 -->
-            <div class="step-card">
-                <img src="images/make_chuan4.png" class="step-img" alt="串肉">
-                <div class="step-content">
-                    <div class="step-number">第二步 串肉准备</div>
-                    <h3></h3>
-                    <p>准备竹签或铁签</p>
-                    <p>每串穿5-6块肉</p>
-                    <p>肉块之间留有间隙</p>
-                    <p>均匀撒上孜然粉和胡椒粉</p>
+                <!-- 步骤2 -->
+                <div class="step-card">
+                    <img src="images/make_chuan4.png" class="step-img" alt="串肉">
+                    <div class="step-content">
+                        <div class="step-number">第二步 串肉准备</div>
+                        <h3></h3>
+                        <p>准备竹签或铁签</p>
+                        <p>每串穿5-6块肉</p>
+                        <p>肉块之间留有间隙</p>
+                        <p>均匀撒上孜然粉和胡椒粉</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤3 -->
-            <div class="step-card">
-                <img src="images/make_chuan3.png" class="step-img" alt="烤制">
-                <div class="step-content">
-                    <div class="step-number">第三步 传统烤制</div>
-                    <h3></h3>
-                    <p>准备炭火烤架至炭火通红</p>
-                    <p>将肉串放在烤架上</p>
-                    <p>不断翻转烤至金黄色</p>
-                    <p>刷上少许油增加香味</p>
+                <!-- 步骤3 -->
+                <div class="step-card">
+                    <img src="images/make_chuan3.png" class="step-img" alt="烤制">
+                    <div class="step-content">
+                        <div class="step-number">第三步 传统烤制</div>
+                        <h3></h3>
+                        <p>准备炭火烤架至炭火通红</p>
+                        <p>将肉串放在烤架上</p>
+                        <p>不断翻转烤至金黄色</p>
+                        <p>刷上少许油增加香味</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 步骤4 -->
-            <div class="step-card">
-                <img src="images/make_chuan2.png" class="step-img" alt="成品">
-                <div class="step-content">
-                    <div class="step-number">第四步 出炉装盘</div>
-                    <h3></h3>
-                    <p>烤好的羊肉串取下</p>
-                    <p>撒上辣椒粉和孜然粉</p>
-                    <p>趁热食用风味最佳</p>
+                <!-- 步骤4 -->
+                <div class="step-card">
+                    <img src="images/make_chuan2.png" class="step-img" alt="成品">
+                    <div class="step-content">
+                        <div class="step-number">第四步 出炉装盘</div>
+                        <h3></h3>
+                        <p>烤好的羊肉串取下</p>
+                        <p>撒上辣椒粉和孜然粉</p>
+                        <p>趁热食用风味最佳</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
     <!-- 返回按钮 -->
     <div class="index_more" style="margin:50px auto">
         <a href="yangrouchuan.html">返回上级菜单</a>

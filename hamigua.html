@@ -150,6 +150,59 @@
             display: flex;
             justify-content: space-around;
         }
+         @font-face {
+            font-family: 'zhuhai';
+            src: url('fonts/zhuhaiti.ttf');
+        }
+
+        .section h2 {
+            font-family: 'zhuhai', sans-serif;
+            font-weight: lighter;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 40px;
+        }
+
+        @font-face {
+            font-family: 'pingfang';
+            src: url('fonts/PingFang.ttf');
+        }
+
+        .section h3,
+        p {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+
+        .section p {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            text-indent: 2em;
+        }
+
+        .caption {
+            font-family: 'pingfang', sans-serif;
+            font-weight: lighter;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+
+        .culture-item img {
+            width: 100%;
+            /* 设置图片宽度为容器宽度 */
+            height: 300px;
+            /* 设置图片高度 */
+            object-fit: cover;
+            /* 确保图片不会被拉伸 */
+            border-radius: 15px;
+            /* 设置图片圆角 */
+        }
+
+        .gallery-item img {
+            border-radius: 8px;
+            /* 设置图片圆角 */
+        }
     </style>
 </head>
 
