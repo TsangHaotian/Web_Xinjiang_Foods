@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <!-- 点击特效JS -->
+    <script type="text/javascript" src="js/dianji.js"></script>
+    <link rel="stylesheet" href="css/dianji.css" type="text/css">
     <style>
         :root {
             --primary-color: #8B4513;
@@ -25,8 +28,8 @@
         /* 动态背景层 */
         .hero-bg {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url('images/hamigua.jpg') center/cover fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('images/hamigua.jpg') center/cover fixed;
             position: relative;
             overflow: hidden;
         }
@@ -39,13 +42,20 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             animation: titleEntrance 1.5s ease-out;
         }
 
         @keyframes titleEntrance {
-            from { opacity: 0; transform: translate(-50%, -40%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
         }
 
         /* 主要内容容器 */
@@ -55,7 +65,7 @@
             padding: 40px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
@@ -130,7 +140,7 @@
         .timeline-item {
             padding: 20px;
             position: relative;
-            width: 40%;
+            width: 55%;
             background: #FFF9F0;
             border-radius: 8px;
             margin: 30px 0;
@@ -138,7 +148,7 @@
 
         .timeline-item:nth-child(odd) {
             left: 0;
-            transform: translateX(20px);
+            transform: translateX(-100px);
         }
 
         .timeline-item:nth-child(even) {
@@ -146,11 +156,12 @@
             transform: translateX(-20px);
         }
 
-        .culture-grid{
+        .culture-grid {
             display: flex;
             justify-content: space-around;
         }
-         @font-face {
+
+        @font-face {
             font-family: 'zhuhai';
             src: url('fonts/zhuhaiti.ttf');
         }
@@ -203,151 +214,157 @@
             border-radius: 8px;
             /* 设置图片圆角 */
         }
+        
     </style>
 </head>
 
 <body>
-<!-- 全屏背景 -->
-<div class="background"></div>
+    <!-- 全屏背景 -->
+    <div class="background"></div>
 
-<!-- 顶部导航栏 -->
-<div class="top_bg fix">
-    <div class="top_main">
-        <div class="top_nav">
-            <h2>
-                <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
-            </h2>
-            <ul>
-                <li> <a href="index.html">网站首页</a> </li>
-                <li> <a href="#">新疆美食三巨头</a> <i></i>
-                    <dl>
-                        <dd><a href="nang.html">新疆大馕饼</a></dd>
-                        <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
-                        <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
-                    </dl>
-                </li>
-                <li> <a href="#">美食的诞生</a> <i></i>
-                    <dl>
-                        <dd><a href="make_nang.html">馕的制作</a></dd>
-                        <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
-                        <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
-                    </dl>
-                </li>
-                </li>
-                <li><a href="food_from.html">美食来自哪</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-            <script type="text/javascript">
-                $(function () {
-                    $(".top_nav ul li").hover(
-                        function () {
-                            $(this).find("dl").stop().fadeToggle(700)
+    <!-- 顶部导航栏 -->
+    <div class="top_bg fix">
+        <div class="top_main">
+            <div class="top_nav">
+                <h2>
+                    <img src="images/未来设计师大赛-logo-白.png" style="width:18%; height:auto;">
+                </h2>
+                <ul>
+                    <li> <a href="index.html">网站首页</a> </li>
+                    <li> <a href="#">新疆美食三巨头</a> <i></i>
+                        <dl>
+                            <dd><a href="nang.html">新疆大馕饼</a></dd>
+                            <dd><a href="yangrouchuan.html">特色羊肉串</a></dd>
+                            <dd><a href="shouzhuafan.html">好吃的抓饭</a></dd>
+                        </dl>
+                    </li>
+                    <li> <a href="#">美食的诞生</a> <i></i>
+                        <dl>
+                            <dd><a href="make_nang.html">馕的制作</a></dd>
+                            <dd><a href="make_yangrouchuan.html">串的制作</a></dd>
+                            <dd><a href="make_shouzhuafan.html">抓饭的制作</a></dd>
+                        </dl>
+                    </li>
+                    </li>
+                    <li><a href="food_from.html">美食来自哪</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".top_nav ul li").hover(
+                            function () {
+                                $(this).find("dl").stop().fadeToggle(700)
+                            }
+                        )
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部导航栏 -->
+
+    <div class="hero-bg">
+        <div class="hero-title">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">新疆哈密瓜</h1>
+            <p style="font-size: 1.5rem;">沙漠中的甜蜜奇迹</p>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 历史文化 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-history"></i>历史传承</h2>
+            <p>哈密瓜的种植历史可追溯至2000多年前的汉代，是丝绸之路上的重要贡品。因产于新疆哈密地区而得名，曾是历代皇室贡品，被誉为"瓜中之王"。</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/hamigua1.png" alt="哈密瓜田园">
+                    <div class="caption">哈密瓜种植基地</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hamigua2.png" alt="哈密瓜切开">
+                    <div class="caption">金黄色的瓜肉</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作工艺 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-seedling"></i>种植特色</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>独特气候</h3>
+                    <p>昼夜温差大，日照充足，干燥少雨，这种气候条件使得植物在白天能够充分进行光合作用，积累大量的养分，而夜晚温度降低，呼吸作用减弱，养分消耗减少，有利于果实中糖分等营养物质的积累，从而提升了果实的口感和品质。</p>
+                        <p>同时，干燥少雨的环境还能有效减少病虫害的发生，降低农药的使用量，保证了农产品的绿色健康。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>土壤条件</h3>
+                    <p>富含矿物质的沙质土壤，排水性好。沙质土壤颗粒较大，孔隙度高，透气性佳，有利于植物根系的生长和呼吸，能够促进根系向深处发展，增强植物的抗倒伏能力和对养分的吸收能力。</p>
+                        <p>而且土壤中丰富的矿物质可以为植物提供全面的营养元素，满足植物在不同生长阶段对各种营养的需求，使植物生长更加茁壮，果实的营养价值也更高。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>灌溉技术</h3>
+                    <p>采用滴灌技术，节约水资源。滴灌是一种精准的灌溉方式，能够将水直接输送到植物根部，避免了传统灌溉方式中水的大量浪费，提高了水的利用效率。</p>
+                    <p>同时，滴灌可以根据植物的需水情况精确控制灌溉量，保证植物在生长过程中始终处于适宜的水分环境中，既不会因缺水而影响生长，也不会因水分过多而造成根系腐烂等问题，有助于提高植物的产量和质量。</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>人工授粉</h3>
+                    <p>精细化管理，确保果实品质。人工授粉可以有效提高授粉的成功率，避免自然授粉过程中可能出现的花粉不足、授粉不均匀等问题。</p>
+                    <p>通过人工授粉，能够使果实的种子发育更加饱满，果实的形状更加规整，大小更加均匀，从而提高果实的外观品质。此外，人工授粉还可以增加果实的产量，提高经济效益，是实现农业精细化管理、提升农产品品质的重要措施之一。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化内涵 -->
+        <section class="section">
+            <h2><i class="icon-feature fas fa-hand-holding-heart"></i>营养价值</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="images/hamigua3.png" alt="哈密瓜切片" width="400" height="300">
+                    <h3>丰富维生素</h3>
+                    <p>含有丰富的维生素A、B、C和胡萝卜素</p>
+                </div>
+                <div class="culture-item">
+                    <img src="images/hamigua4.png" alt="哈密瓜特写" width="400" height="300">
+                    <h3>矿物元素</h3>
+                    <p>富含钾、镁、锌等多种矿物质元素</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
                         }
-                    )
-                })
-            </script>
-        </div>
-    </div>
-</div>
-<!-- 顶部导航栏 -->
-
-<div class="hero-bg">
-    <div class="hero-title">
-        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">新疆哈密瓜</h1>
-        <p style="font-size: 1.5rem;">沙漠中的甜蜜奇迹</p>
-    </div>
-</div>
-
-<!-- 主要内容 -->
-<main class="main-content">
-    <!-- 历史文化 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-history"></i>历史传承</h2>
-        <p>哈密瓜的种植历史可追溯至2000多年前的汉代，是丝绸之路上的重要贡品。因产于新疆哈密地区而得名，曾是历代皇室贡品，被誉为"瓜中之王"。</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/hamigua1.png" alt="哈密瓜田园">
-                <div class="caption">哈密瓜种植基地</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/hamigua2.png" alt="哈密瓜切开">
-                <div class="caption">金黄色的瓜肉</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 制作工艺 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-seedling"></i>种植特色</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>独特气候</h3>
-                <p>昼夜温差大，日照充足，干燥少雨</p>
-            </div>
-            <div class="timeline-item">
-                <h3>土壤条件</h3>
-                <p>富含矿物质的沙质土壤，排水性好</p>
-            </div>
-            <div class="timeline-item">
-                <h3>灌溉技术</h3>
-                <p>采用滴灌技术，节约水资源</p>
-            </div>
-            <div class="timeline-item">
-                <h3>人工授粉</h3>
-                <p>精细化管理，确保果实品质</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 文化内涵 -->
-    <section class="section">
-        <h2><i class="icon-feature fas fa-hand-holding-heart"></i>营养价值</h2>
-        <div class="culture-grid">
-            <div class="culture-item">
-                <img src="images/hamigua3.png" alt="哈密瓜切片" width="400" height="300">
-                <h3>丰富维生素</h3>
-                <p>含有丰富的维生素A、B、C和胡萝卜素</p>
-            </div>
-            <div class="culture-item">
-                <img src="images/hamigua4.png" alt="哈密瓜特写" width="400" height="300">
-                <h3>矿物元素</h3>
-                <p>富含钾、镁、锌等多种矿物质元素</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<script>
-    // 图片懒加载
-    document.addEventListener("DOMContentLoaded", function() {
-        const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.remove("lazy");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
+                    });
                 });
-            });
 
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        }
-    });
+                lazyImages.forEach(function (lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
 
-    // 导航栏交互
-    $(document).ready(function(){
-        $('.top_nav li').hover(
-            function(){ $(this).addClass('hover'); },
-            function(){ $(this).removeClass('hover'); }
-        );
-    });
-</script>
+        // 导航栏交互
+        $(document).ready(function () {
+            $('.top_nav li').hover(
+                function () { $(this).addClass('hover'); },
+                function () { $(this).removeClass('hover'); }
+            );
+        });
+    </script>
+
 
 
 </body>
