@@ -65,11 +65,3 @@ git clone https://github.com/TsangHaotian/Web_Xinjiang_Foods.git
 cd Web_Xinjiang_Foods
 ```
 3. 用浏览器打开 `index.html` 文件即可查看网站。
-
-## 测试说明
-- 测试上传：已完成文件上传测试。
-- 录屏测试：记录项目相关操作和展示效果。
-
-## 联系方式
-如果你有任何问题或建议，欢迎通过 `contact.html` 页面中的联系方式与我们取得联系。
-```
